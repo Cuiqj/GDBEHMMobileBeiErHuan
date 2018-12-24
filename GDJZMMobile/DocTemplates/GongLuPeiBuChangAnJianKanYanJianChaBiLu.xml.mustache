@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 勘验（检查）笔录 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10.5" offset="0,4" />
+	<pdf:content>
+		<pdf:text point="77,15" fontName="SimHei" fontSize="20.5">勘验（检查）笔录</pdf:text>
+    
+        <pdf:text point="20,30" fontSize="14">案由：</pdf:text>
+        <pdf:text point="35,30" static="NO">{{ caseProve.description }}</pdf:text>
+        <pdf:line fromPoint="35,35" toPoint="190,35" lineWidth="0.5"/>
+        <pdf:text point="20,40" fontSize="14">勘验（检查）时间：</pdf:text>
+        <pdf:text point="62,40" static="NO">{{ caseProve.sDate.year }}</pdf:text>
+        <pdf:line fromPoint="62,45" toPoint="70,45" lineWidth="0.5"/>
+        <pdf:text point="70,40" fontSize="14">年</pdf:text>
+        <pdf:text point="75,40" static="NO">{{ caseProve.sDate.month }}</pdf:text>
+        <pdf:line fromPoint="75,45" toPoint="80,45" lineWidth="0.5"/>
+        
+        <pdf:text point="80,40" fontSize="14">月</pdf:text>
+        <pdf:text point="85,40" static="NO">{{ caseProve.sDate.day }}</pdf:text>
+        <pdf:line fromPoint="85,45" toPoint="90,45" lineWidth="0.5"/>
+        <pdf:text point="90,40" fontSize="14">日</pdf:text>
+        <pdf:text point="95,40" static="NO">{{ caseProve.sDate.hour }}</pdf:text>
+        <pdf:line fromPoint="95,45" toPoint="100,45" lineWidth="0.5"/>
+        <pdf:text point="100,40" fontSize="14">时</pdf:text>
+        <pdf:text point="105,40" static="NO">{{ caseProve.sDate.minute }}</pdf:text>
+        <pdf:line fromPoint="105,45" toPoint="110,45" lineWidth="0.5"/>
+        <pdf:text point="110,40" fontSize="14">分至</pdf:text>
+        <pdf:text point="120,40" static="NO">{{ caseProve.eDate.month }}</pdf:text>
+        <pdf:line fromPoint="120,45" toPoint="125,45" lineWidth="0.5"/>
+        <pdf:text point="125,40" fontSize="14">月</pdf:text>
+        <pdf:text point="130,40" static="NO">{{ caseProve.eDate.day }}</pdf:text>
+        <pdf:line fromPoint="130,45" toPoint="135,45" lineWidth="0.5"/>
+        <pdf:text point="135,40" fontSize="14">日</pdf:text>
+        <pdf:text point="140,40" static="NO">{{ caseProve.eDate.hour }}</pdf:text>
+        <pdf:line fromPoint="140,45" toPoint="145,45" lineWidth="0.5"/>
+        <pdf:text point="145,40" fontSize="14">时</pdf:text>
+        <pdf:text point="150,40" static="NO">{{ caseProve.eDate.minute }}</pdf:text>
+        <pdf:line fromPoint="150,45" toPoint="155,45" lineWidth="0.5"/>
+        <pdf:text point="155,40" fontSize="14">分</pdf:text>
+        
+        <pdf:text point="20,50" fontSize="14">勘验（检查）场所：</pdf:text>
+        <pdf:text point="62,50" maxWidth = "59" static="NO">{{ caseProve.inpect_place }}</pdf:text>
+        <pdf:line fromPoint="62,55" toPoint="122,55" lineWidth="0.5"/>
+        <pdf:text point="123,50" fontSize="14">天气情况：</pdf:text>
+        <pdf:text point="145,50" static="NO">{{ case.weather }}</pdf:text>
+        <pdf:line fromPoint="145,55" toPoint="190,55" lineWidth="0.5"/>
+        
+        <pdf:text point="20,60" fontSize="14">勘验（检查）人：</pdf:text>
+        <pdf:text point="57,60" static="NO">{{ caseProve.inspector1.name }}</pdf:text>
+        <pdf:line fromPoint="57,65" toPoint="70,65" lineWidth="0.5"/>
+        <pdf:text point="70,60" fontSize="14">单位及职务：</pdf:text>
+        <pdf:text point="98,60"  static="NO" maxWidth = "43">{{ caseProve.inspector1.org_duty }}</pdf:text>
+        <pdf:line fromPoint="100,65" toPoint="140,65" lineWidth="0.5"/>
+        <pdf:text point="140,60" fontSize="14">执法证号：</pdf:text>
+        <pdf:text point = "163,60" static = "NO">{{ caseProve.inspector1.userID }}</pdf:text>
+        <pdf:line fromPoint="162,65" toPoint="190,65" lineWidth="0.5"/>
+        
+        <pdf:text point="20,70" fontSize="14">勘验（检查）人：</pdf:text>
+        <pdf:text point="57,70" static="NO">{{ caseProve.inspector2.name }}</pdf:text>
+        <pdf:line fromPoint="57,75" toPoint="70,75" lineWidth="0.5"/>
+        <pdf:text point="70,70" fontSize="14">单位及职务：</pdf:text>
+        <pdf:text point="98,70" static="NO" maxWidth = "43">{{ caseProve.inspector2.org_duty }}</pdf:text>
+        <pdf:line fromPoint="100,75" toPoint="140,75" lineWidth="0.5"/>
+        <pdf:text point="140,70" fontSize="14">执法证号：</pdf:text>
+        <pdf:text point = "163,70" static = "NO">{{ caseProve.inspector2.userID }}</pdf:text>
+        <pdf:line fromPoint="162,75" toPoint="190,75" lineWidth="0.5"/>
+        
+        <pdf:text point="20,80" fontSize="14">勘验（检查）人：</pdf:text>
+        <pdf:text point="57,80" static="NO">{{ caseProve.inspector3.name }}</pdf:text>
+        <pdf:line fromPoint="57,85" toPoint="70,85" lineWidth="0.5"/>
+        <pdf:text point="70,80" fontSize="14">单位及职务：</pdf:text>
+        <pdf:text point="98,80" static="NO" maxWidth = "43">{{ caseProve.inspector3.org_duty }}</pdf:text>
+        <pdf:line fromPoint="100,85" toPoint="140,85" lineWidth="0.5"/>
+        <pdf:text point="140,80" fontSize="14">执法证号：</pdf:text>
+        <pdf:text point = "163,80" static = "NO">{{ caseProve.inspector3.userID }}</pdf:text>
+        <pdf:line fromPoint="162,85" toPoint="190,85" lineWidth="0.5"/>
+        
+        <pdf:text point="20,90" fontSize="14">当事人（当事人代理人）姓名：</pdf:text>
+        <pdf:text point="87,90" static="NO">{{ caseProve.party.name }}</pdf:text>
+        <pdf:line fromPoint="85,95" toPoint="115,95" lineWidth="0.5"/>
+        <pdf:text point="115,90" fontSize="14">性别：</pdf:text>
+        <pdf:text point="128,90" static="NO">{{ caseProve.sex }}</pdf:text>
+        <pdf:line fromPoint="128,95" toPoint="150,95" lineWidth="0.5"/>
+        <pdf:text point="150,90" fontSize="14">年龄：</pdf:text>
+        <pdf:text point="162,90" static="NO">{{ caseProve.age }}</pdf:text>
+        <pdf:line fromPoint="162,95" toPoint="190,95" lineWidth="0.5"/>
+        
+        <pdf:text point="20,100" fontSize="14">身份证号：</pdf:text>
+        <pdf:text point="42,100" static="NO">{{ caseProve.party.id }}</pdf:text>
+        <pdf:line fromPoint="42,105" toPoint="85,105" lineWidth="0.5"/>
+        <pdf:text point="85,100" fontSize="14">工作单位：</pdf:text>
+        <pdf:text point="108,100" maxWidth = "44" static="NO">{{caseProve.org}}</pdf:text>
+        <pdf:line fromPoint="108,105" toPoint="150,105" lineWidth="0.5"/>
+        <pdf:text point="150,100" fontSize="14">职务：</pdf:text>
+        <pdf:text point="162,100" static="NO">{{caseProve.duty}}</pdf:text>
+        <pdf:line fromPoint="162,105" toPoint="190,105" lineWidth="0.5"/>
+        
+        <pdf:text point="20,110" fontSize="14">住址：</pdf:text>
+        <pdf:text point="33,110" maxWidth = "68" static="NO">{{caseProve.address}}</pdf:text>
+        <pdf:line fromPoint="33,115" toPoint="100,115" lineWidth="0.5"/>
+        <pdf:text point="100,110" fontSize="14">联系电话：</pdf:text>
+        <pdf:text point="125,110" static="NO">{{caseProve.telephone}}</pdf:text>
+        <pdf:line fromPoint="125,115" toPoint="190,115" lineWidth="0.5"/>
+        
+        <pdf:text point="20,120" fontSize="14">被邀请人：</pdf:text>
+        <pdf:text point="42,120" static="NO">{{ caseProve.invitee.name }}</pdf:text>
+        <pdf:line fromPoint="42,125" toPoint="100,125" lineWidth="0.5"/>
+        <pdf:text point="101,120" fontSize="14">单位及职务：</pdf:text>
+        <pdf:text point="128,120" static="NO">{{ caseProve.invitee.org_duty }}</pdf:text>
+        <pdf:line fromPoint="128,125" toPoint="190,125" lineWidth="0.5"/>
+        
+        <pdf:text point="20,130" fontSize="14">记录人：</pdf:text>
+        <pdf:text point="42,130" static="NO">{{ caseProve.recorder.name }}</pdf:text>
+        <pdf:line fromPoint="42,135" toPoint="100,135" lineWidth="0.5"/>
+        <pdf:text point="101,130" fontSize="14">单位及职务：</pdf:text>
+        <pdf:text point="128,130" static="NO">{{ caseProve.recorder.org_duty }}</pdf:text>
+        <pdf:line fromPoint="128,135" toPoint="190,135" lineWidth="0.5"/>
+        
+        <pdf:text point="20,140" fontSize="14">勘验（检查）情况及结果：</pdf:text>
+        <pdf:paragraph rect="{20,145},{166,96}" lineHeight="9" static="NO">{{ caseProve.inspect_result }}</pdf:paragraph>
+        <pdf:line fromPoint="75,145" toPoint="190,145" lineWidth="0.5"/>
+        
+        <pdf:line fromPoint="20,155" toPoint="190,155" lineWidth="0.5"/>
+        <pdf:line fromPoint="20,165" toPoint="190,165" lineWidth="0.5"/>
+        <pdf:line fromPoint="20,175" toPoint="190,175" lineWidth="0.5"/>
+        <pdf:line fromPoint="20,185" toPoint="190,185" lineWidth="0.5"/>
+        <pdf:line fromPoint="20,195" toPoint="190,195" lineWidth="0.5"/>
+        <pdf:line fromPoint="20,205" toPoint="190,205" lineWidth="0.5"/>
+        <pdf:line fromPoint="20,215" toPoint="190,215" lineWidth="0.5"/>
+        <!--<pdf:line fromPoint="20,225" toPoint="190,215" lineWidth="0.5"/>-->
+        
+        <pdf:text point="20,220" fontSize="14">勘验（检查）人签名：</pdf:text>
+        <pdf:line fromPoint="67,225" toPoint="100,225" lineWidth="0.5"/>
+        <pdf:text point="100,220" fontSize="14">、</pdf:text>
+        <pdf:line fromPoint="103,225" toPoint="138,225" lineWidth="0.5"/>
+        <pdf:text point="138,220" fontSize="14">、</pdf:text>
+        <pdf:line fromPoint="141,225" toPoint="176,225" lineWidth="0.5"/>
+        
+        <pdf:text point="20,230" fontSize="14">当事人或其代理人签名：</pdf:text>
+        <pdf:line fromPoint="75,235" toPoint="110,235" lineWidth="0.5"/>
+        
+        <pdf:text point="20,240" fontSize="14">被邀请人签名：</pdf:text>
+        <pdf:line fromPoint="50,245" toPoint="100,245" lineWidth="0.5"/>
+        <pdf:text point="130,240" fontSize="14">记录人签名：</pdf:text>
+        <pdf:line fromPoint="160,245" toPoint="190,245" lineWidth="0.5"/>
+        
+        <pdf:text point="20,250" fontSize="14">备注：</pdf:text>
+        <pdf:text point="20,260" fontSize="14">（本页填写不下的内容或需要绘制勘验图的，可另附页。）</pdf:text>
+
+	</pdf:content>
+</pdf:template>	

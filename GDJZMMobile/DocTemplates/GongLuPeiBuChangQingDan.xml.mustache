@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+    {{! 公路赔(补)偿清单 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10" offset="9,3.5"/>
+	<pdf:content>
+        <pdf:text point="top-left:74,18" fontSize="18">损坏公路路产索赔清单</pdf:text>
+        <pdf:table rect="{15,34},{168.5,232}" borderWidth="0.5" lineWidth="0.5" padding="1">
+            <pdf:tr height="12">
+            	<pdf:td width="16.5">当事人</pdf:td>
+            	<pdf:td width="36.5" static="NO">{{ citizen.name }}</pdf:td>
+            	<pdf:td width="16">车型</pdf:td>
+            	<pdf:td width="40" static="NO">{{ citizen.car_model }}</pdf:td>
+            	<pdf:td width="25">车 号</pdf:td>
+            	<pdf:td width="34.5" static="NO">{{ citizen.car_number }}</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="14">
+            	<pdf:td width="16.5">单 位</pdf:td>
+            	<pdf:td width="92.5" static="NO">{{ citizen.org }}</pdf:td>
+            	<pdf:td width="25">联系电话</pdf:td>
+            	<pdf:td width="34.5" static="NO">{{ citizen.tel }}</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="12">
+            	<pdf:td width="16.5">案  发\n地  点</pdf:td>
+            	<pdf:td width="92.5" static="NO">{{ case.place }}</pdf:td>
+            	<pdf:td width="25">时 间</pdf:td>
+            	<pdf:td width="34.5" textAlignment="left" static="NO">{{ case.date }}</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="132">
+                <pdf:td width="16.5" textAlignment="center">损\n\n\n坏\n\n\n公\n\n\n路\n\n\n设\n\n\n施\n\n\n情\n\n\n况</pdf:td>
+                <pdf:td width="152" textAlignment="center">
+                    <pdf:table rect = "{0,0},{152,12}" borderWidth = "0.5" lineWidth = "0.5" padding = "1">
+                        <pdf:tr height="12">
+                            <pdf:td width="58.5" height="12" textAlignment="center">项     目</pdf:td>
+                            <pdf:td width="17" height="12" textAlignment="center">数量</pdf:td>
+                            <pdf:td width="17" height="12" textAlignment="center">单位</pdf:td>
+                            <pdf:td width="25" height="12" textAlignment="center">单价(元)</pdf:td>
+                            <pdf:td width="34.5" height="12" textAlignment="center">额定金额(元)</pdf:td>
+                        </pdf:tr>
+                    </pdf:table>
+<!--            <pdf:tr height="11.5">-->
+<!--                <pdf:td width="16.5" textAlignment="center"></pdf:td>-->
+<!--                <pdf:td width="58.5" textAlignment="center">项目名称</pdf:td>-->
+<!--<!--                <pdf:td width="15" textAlignment="center">规 格</pdf:td>-->-->
+<!--                <pdf:td width="17" textAlignment="center">数 量</pdf:td>-->
+<!--                <pdf:td width="17" textAlignment="center">单 位</pdf:td>-->
+<!--                <pdf:td width="25" textAlignment="center">单价(元)</pdf:td>-->
+<!--                <pdf:td width="34.5" textAlignment="center">金额(元)</pdf:td>-->
+<!--            </pdf:tr>-->
+                    <pdf:table rect = "{0,12},{152,120}" borderWidth = "0.5" lineWidth = "0.5" padding = "1">
+                        {{! 赔补偿项目列表 }}
+                        {{#items}}
+                        <pdf:tr  height="8">
+<!--                <pdf:td width="15.5" >{{ .id }}</pdf:td>-->
+                            <pdf:td width="58.5" textAlignment="center" static="NO">{{ .name }}</pdf:td>
+<!--                <pdf:td width="15" static="NO">{{ .size }}</pdf:td>-->
+                            <pdf:td width="17" static="NO">{{ .quantity }}</pdf:td>
+                            <pdf:td width="17" static="NO">{{ .unit }}</pdf:td>
+                            <pdf:td width="25" static="NO">{{ .unit_price }}</pdf:td>
+                            <pdf:td width="34.5" static="NO">{{ .total_price }}</pdf:td>
+                        </pdf:tr>
+                        {{/items}}
+                    </pdf:table>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="10">
+            	<pdf:td width="16.5" textAlignment="center">合计</pdf:td>
+            	<pdf:td width="152" textAlignment="center">
+            		<pdf:text point="mid-left:1,5.55">人民币（大写）：</pdf:text>
+            		<pdf:text point="mid-left:34,5.55" static="NO">{{ money.wan }} </pdf:text>
+                    <pdf:text point="mid-left:46.5,5.55">万</pdf:text>
+            		<pdf:text point="mid-left:50,5.60" static="NO">{{ money.qian }} </pdf:text>
+            		<pdf:text point="mid-left:55.5,5.6">仟</pdf:text>
+            		<pdf:text point="mid-left:60,5.65" static="NO">{{ money.bai }} </pdf:text>
+            		<pdf:text point="mid-left:65,5.65">佰</pdf:text>
+            		<pdf:text point="mid-left:70,5.70" static="NO">{{ money.shi }} </pdf:text>
+            		<pdf:text point="mid-left:75,5.7">拾</pdf:text>
+            		<pdf:text point="mid-left:80,5.75" static="NO">{{ money.yuan }} </pdf:text>
+            		<pdf:text point="mid-left:85,5.75">元</pdf:text>
+            		<pdf:text point="mid-left:90,5.80" static="NO">{{ money.jiao }} </pdf:text>
+            		<pdf:text point="mid-left:95.5,5.8">角</pdf:text>
+            		<pdf:text point="mid-left:101,5.85" static="NO">{{ money.fen }} </pdf:text>
+            		<pdf:text point="mid-left:107,5.85">分</pdf:text>
+                    <pdf:text point="mid-left:112,5.85">（￥</pdf:text>
+                    <pdf:text point="mid-left:119.5,5.9" static="NO">{{ money.xiaoxie }}</pdf:text>
+                    <pdf:text point="mid-left:147,5.9">）</pdf:text>
+            	</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="20">
+            	<pdf:td width="16.5" textAlignment="center">备注</pdf:td>
+<!--                <pdf:td width="152" textAlignment="left">\n    以上赔偿标准依据广东省交通厅、广东省财政厅和广东省物价局《关于重新制订≺损坏公路路产赔偿标准≻的通知》（粤交路〔1998〕38号）及《关于增补公路路产赔偿项目标准的通知》（粤交路〔1999〕263号）执行。\n</pdf:td>-->
+<!--                <pdf:text point="mid-left:17,3">）</pdf:text>-->
+            </pdf:tr>
+        </pdf:table>     <!-- 下面的移上来的-->
+        <pdf:line fromPoint="31.5,234" toPoint="183.5,234" lineWidth="0.5" />
+        <pdf:text point="top-left:42,216" fontSize="11"> 以上赔偿标准依据广东省交通厅、广东省财政厅和广东省物价局《关于重新</pdf:text>
+        <pdf:text point="top-left:33,222" fontSize="11">制订≺损坏公路路产赔偿标准≻的通知》（粤交路〔1998〕38号）及《关于增补公</pdf:text>
+        <pdf:text point="top-left:33,228" fontSize="11">路路产赔偿项目标准的通知》（粤交路〔1999〕263号）执行。</pdf:text>
+<!--            <pdf:tr height="32.5">-->
+<!--                <pdf:td width="168.5" fontSize="12" textAlignment="left">告知事项：-->
+<!--    1.路产案件处理地址：广州市白云区太和镇和龙水库118号（广州市北二环高速公路管理中心一楼101办公室 西行K19+900）     ;-->
+<!--    2.办公时间：8:30至12:00，13:30-16:50                                   ；-->
+<!--    3.办公电话：  020-87421645   ；投诉及监督电话：  020-87438913   ；-->
+<!--    4.在交警结案前，应先办理路产赔偿手续。</pdf:td>-->
+<!--            </pdf:tr>-->
+            <pdf:text point="top-left:18,235" fontSize="11">告知事项：</pdf:text>
+            <pdf:text point="top-left:27,240" fontSize="11"> 1.路产案件处理地址：广州市白云区太和镇和龙水库118号（广州市北二环高速公路</pdf:text>
+            <pdf:line fromPoint="65,244" toPoint="170,244" lineWidth="0.5" />
+            <pdf:text point="top-left:18,245" fontSize="11"> 管理中心一楼101办公室 西行K19+900）     ;</pdf:text>
+            <pdf:line fromPoint="17.5,249" toPoint="95,249" lineWidth="0.5" />
+            <pdf:text point="top-left:27,250" fontSize="11"> 2.办公时间：8:30至12:00，13:30-16:50                                      ；</pdf:text>
+            <pdf:line fromPoint="50,254" toPoint="170,254" lineWidth="0.5" />
+            <pdf:text point="top-left:27,255" fontSize="11"> 3.办公电话：  020-87421645   ；投诉及监督电话：  020-87438913   ；</pdf:text>
+            <pdf:line fromPoint="50,259" toPoint="83,259" lineWidth="0.5" />
+            <pdf:line fromPoint="117,259" toPoint="149,259" lineWidth="0.5" />
+            <pdf:text point="top-left:27,260" fontSize="11"> 4.在交警结案前，应先办理路产赔偿手续。</pdf:text>
+<!--            </pdf:table>-->
+<!--        <pdf:paragraph rect="{190,108},{5,35}" textAlignment="left">第一联：路政存档</pdf:paragraph>-->
+        <pdf:text point="top-left:18,266.8">当事人（签名）：</pdf:text>
+        <pdf:text point="top-left:75,266.8">案件经办人（签名）：</pdf:text>
+        <pdf:text point="top-left:150,266.8">执行单位（盖章）</pdf:text>
+	</pdf:content> 
+</pdf:template>

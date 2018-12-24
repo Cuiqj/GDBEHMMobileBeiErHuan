@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 公路赔（补）偿通知书 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10" offset="22,0" />
+	<pdf:content>
+		<pdf:text point="51,16" fontName="SimHei" fontSize="20.5">处 理 路 产 赔 偿 通 知 书</pdf:text>
+        <pdf:text point="31,34" static = "NO" maxWidth = "13">{{ roadSegment }}</pdf:text>
+        <pdf:text point="53.5,34" static = "NO" maxWidth = "11">{{ side }}</pdf:text>
+        <pdf:text point="67,34" static = "NO" maxWidth = "8.5"> {{ place }}</pdf:text>
+        <pdf:text point="85,34" static = "NO" maxWidth = "10">{{ stationKM }}</pdf:text>
+        <pdf:text point="106,34" static = "NO" maxWidth = "10">{{ stationM }}</pdf:text>
+        <pdf:text point="137,35" static = "NO">{{ year }}</pdf:text>
+        <pdf:text point="151,35" static = "NO">{{ month }}</pdf:text>
+        <pdf:text point="161,35" static = "NO">{{ day }}</pdf:text>
+        <pdf:text point="31,47" static = "NO">{{ automobileNumber }}</pdf:text>
+        <pdf:paragraph rect="{31,57},{137,110}" indent="head:6" lineHeight="8.5"  static="NO" fontSize="10">{{ payDetail }}</pdf:paragraph>
+        <pdf:text point="65,167" static = "NO">{{ payLocation }}</pdf:text>
+        <pdf:text point="65,176" static = "NO">{{ payProcessingTime }}</pdf:text>
+        <pdf:text point="65,186" static = "NO">{{ payTelNumber }}</pdf:text>
+	</pdf:content>
+</pdf:template>

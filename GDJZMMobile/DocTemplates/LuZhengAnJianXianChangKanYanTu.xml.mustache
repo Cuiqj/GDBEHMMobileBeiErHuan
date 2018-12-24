@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 路政案件现场勘验图 }}
+	<pdf:paper width="841.89" height="595.276" fontName="SimSun" fontSize="10.5" offset="-2.8,4.2"/>
+	<pdf:content>
+		<pdf:text point="120,5" fontSize="20.5">广 东 省 公 路 路 政</pdf:text>
+        <pdf:text point="98,15" fontSize="20.5">路 产 索 赔 案 件 现 场 勘 查 图</pdf:text>
+		<!--<pdf:text point="235,17">案号：</pdf:text>
+		<pdf:text point="248,17" static="NO">{{ caseNo }}</pdf:text>-->
+		<pdf:table rect="{14,25},{268,154.6}" borderWidth="0.5" lineWidth="0.5" padding="1">
+			<pdf:tr height="12">
+				<pdf:td width="70">
+					<pdf:text point="mid-left:3,6" static="NO">{{ date.year }}</pdf:text>
+					<pdf:text point="mid-left:11,6">年</pdf:text>
+					<pdf:text point="mid-left:19.5,6" static="NO">{{ date.month }}</pdf:text>
+					<pdf:text point="mid-left:25,6">月</pdf:text>
+					<pdf:text point="mid-left:31,6" static="NO">{{ date.day }}</pdf:text>
+					<pdf:text point="mid-left:37,6">日</pdf:text>
+					<pdf:text point="mid-left:44,6" static="NO">{{ date.hour }}</pdf:text>
+					<pdf:text point="mid-left:50,6">时</pdf:text>
+					<pdf:text point="mid-left:57,6" static="NO">{{ date.minute }}</pdf:text>
+					<pdf:text point="mid-left:62,6">分</pdf:text>
+                </pdf:td>
+				<pdf:td width="20">地点</pdf:td>
+				<pdf:td width="93" static="NO" textAlignment="left">{{ place }}</pdf:td>
+                <pdf:td width="22">天气</pdf:td>
+				<pdf:td width="18" static="NO" textAlignment="center">{{ weater }}</pdf:td>
+				<pdf:td width="30">路面性质</pdf:td>
+				<pdf:td width="15" static="NO" textAlignment="center">{{ eventReason }}</pdf:td>
+                
+			</pdf:tr>
+			<pdf:tr height="115">
+				<pdf:td width="268">
+					<pdf:image rect="{0,0},{268,115}" url="{{ imagePath }}" static="NO"/>
+					<pdf:grid rect="{0,0},{268,115}" row="26" column="62" alpha="0.3" />
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="27.6">
+				<pdf:td width="268">
+                    
+					<pdf:text point="2,1">说明：</pdf:text>
+                    <pdf:line fromPoint = "0,4.6" toPoint = "268,4.6" lineWidth = "0.5" />
+                    <pdf:line fromPoint = "0,9.2" toPoint = "268,9.2" lineWidth = "0.5" />
+                    <pdf:line fromPoint = "0,13.8" toPoint = "268,13.8" lineWidth = "0.5" />
+                    <pdf:line fromPoint = "0,18.4" toPoint = "268,18.4" lineWidth = "0.5" />
+                    <pdf:line fromPoint = "0,23" toPoint = "268,23" lineWidth = "0.5" />
+					<pdf:paragraph rect="{2,0},{264,22}" lineHeight="4.2" indent="head:10" static="NO">{{ comment }}</pdf:paragraph>
+                    <pdf:text point = "mid-left:180,25.5">绘图时间:</pdf:text>
+                    <pdf:text point = "mid-left:198,25.5">{{ draftTime }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+		</pdf:table>
+		<pdf:text point="17,181">路政勘察员：</pdf:text>
+        
+        <!--
+         <pdf:text point="53,187" static="NO">{{ draftsman }}</pdf:text>
+         -->
+		<pdf:text point="100,181">绘图员：</pdf:text>
+        
+        <!--
+         <pdf:text point="112,187" static="NO">{{ inquestman  }}</pdf:text>
+         -->
+        
+		<pdf:text point="180,181">当事人或见证人签字：</pdf:text>
+        
+
+	</pdf:content>
+</pdf:template>

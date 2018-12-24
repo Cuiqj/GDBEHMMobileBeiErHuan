@@ -1,0 +1,67 @@
+//
+// Prefix header for all source files of the 'GDRMMobile' target in the 'GDRMMobile' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#include <libxml/HTMLparser.h>
+#import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
+#import "NSString+MyStringProcess.h"
+#import "NSNumber+NumberConvert.h"
+#import "WebServiceHandler.h"
+#import "NSManagedObject+_NeedUpLoad_.h"
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
+#define ARC_ENABLED
+
+#define BACKDISPATCH(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAINDISPATCH(block) dispatch_async(dispatch_get_main_queue(), block)
+
+#define INSPECTIONKEY @"CurrentInpection_id"
+#define INSPECTORARRAYKEY @"CurrentInspectorArray"
+#define USERKEY @"CurrentUser_id"
+
+
+
+
+#define VERSION_NAME @"北二环"
+#define VERSION_TIME @"2018年11月30日"
+
+
+/*
+ *add by lxm
+ */
+#define MMTOPIX 2.83
+#define SCALEFACTOR 1.0017f
+
+
+
+typedef enum {
+    kAutoNumber = 0,//选择车牌
+    kNexus,//人员类型  当事人 当事人代表等等
+    kCarOwner,//当事人
+    kCarOwnerName,//某个案件的当事人列表
+    kCarOwnerAllName,//某个案件的当事人(包括邀请人等)列表
+    kParkingNodeAutoNumber//责令停驶通知书中的车辆
+}AutoNumberPickerType;

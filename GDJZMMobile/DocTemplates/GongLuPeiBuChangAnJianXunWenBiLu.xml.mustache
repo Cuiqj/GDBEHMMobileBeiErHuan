@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 公路赔（补）偿案件询问笔录 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10.5" offset="1,-4" />
+	<pdf:content>
+		<pdf:text point="88,29" fontName="SimHei" fontSize="20.5">询问笔录</pdf:text>
+		<pdf:text point="30,50">时间：</pdf:text>
+		<pdf:text point="40,50" static="NO">{{ caseInquire.date }}</pdf:text>
+        <pdf:line fromPoint="40,55" toPoint="100,55" lineWidth="0.5"/>
+		<pdf:text point="100,50">地点：</pdf:text>
+		<pdf:text point="110,50" static="NO">{{ caseInquire.place}}</pdf:text>
+        <pdf:line fromPoint="110,55" toPoint="180,55" lineWidth="0.5"/>
+        
+        <pdf:text point="30,60">询问人：</pdf:text>
+        <pdf:text point="45,60" static="NO">{{ caseInquire.inquirerName }}</pdf:text>
+        <pdf:line fromPoint="46,65" toPoint="100,65" lineWidth="0.5"/>
+        <pdf:text point="100,60">记录人：</pdf:text>
+        <pdf:text point="115,60" static="NO">{{ caseInquire.recorderName }}</pdf:text>
+        <pdf:line fromPoint="116,65" toPoint="180,65" lineWidth="0.5"/>
+        
+        <pdf:text point="30,70">被询问人：</pdf:text>
+        <pdf:text point="50,70" static="NO">{{ caseInquire.answererName }}</pdf:text>
+        <pdf:line fromPoint="50,75" toPoint="100,75" lineWidth="0.5"/>
+        <pdf:text point="100,70">与案件关系：</pdf:text>
+        <pdf:text point="125,70" static="NO">{{ caseInquire.answererRelation }}</pdf:text>
+        <pdf:line fromPoint="125,75" toPoint="180,75" lineWidth="0.5"/>
+        
+        <pdf:text point="30,80">身份证号：</pdf:text>
+        <pdf:text point="50,80" static="NO">{{ caseInquire.card }}</pdf:text>
+        <pdf:line fromPoint="50,85" toPoint="100,85" lineWidth="0.5"/>
+        <pdf:text point="100,80">联系电话：</pdf:text>
+        <pdf:text point="120,80" static="NO">{{ caseInquire.answererPhoneNum }}</pdf:text>
+        <pdf:line fromPoint="120,85" toPoint="180,85" lineWidth="0.5"/>
+        
+        <pdf:text point="30,90">工作单位及职务：</pdf:text>
+        <pdf:text point="60,90" static="NO">{{ caseInquire.answererOrgDuty }}</pdf:text>
+        <pdf:line fromPoint="60,95" toPoint="180,95" lineWidth="0.5"/>
+        <pdf:text point="30,100">详细地址：</pdf:text>
+        <pdf:text point="50,100" maxWidth="140" static="NO">{{ caseInquire.answererAddress }}</pdf:text>
+        <pdf:line fromPoint="50,105" toPoint="180,105" lineWidth="0.5"/>
+        
+        <pdf:text point="30,110">我们是</pdf:text>
+        <pdf:line fromPoint="45,115" toPoint="110,115" lineWidth="0.5"/>
+        <pdf:text point = "45,110" maxWidth = "65" static = "NO">{{ caseInquire.orgName }}</pdf:text>
+        <pdf:text point="110,110">执法人员</pdf:text>
+        <pdf:line fromPoint="125,115" toPoint="165,115" lineWidth="0.5"/>
+        <pdf:text point = "125,110" maxWidth = "40" static = "NO">{{ caseInquire.inquirerAndRecorder }}</pdf:text>
+        <pdf:text point="165,110">,执法证件</pdf:text>
+        
+        <pdf:text point="30,120">号码分别是</pdf:text>
+        <pdf:text point="50,120" static = "NO">{{ caseInquire.inquirerRecorderID }}</pdf:text>
+        <pdf:line fromPoint="50,125" toPoint="125,125" lineWidth="0.5"/>
+        <pdf:text point="125,120">，现在依法向你询问，请如实回答</pdf:text>
+        <pdf:text point="30,130">所问问题，否则将依法承担法律责任。</pdf:text>
+        
+        <!--<pdf:paragraph rect="{30,135},{150,120}" lineHeight="9.5" static="NO">
+            {{ caseInquire.inquireNote }}
+        </pdf:paragraph>-->
+        
+        
+        
+<!--        <pdf:text point = "30,140">问：我们是广东省公路事务中心北二环高速公路路政大队的路政员，现就损坏路产一案作一</pdf:text>-->
+        <pdf:line fromPoint = "37,144" toPoint = "180,144" lineWidth = "0.5"/>
+<!--        <pdf:text point = "30,148.2">下询问，请如实提供情况。</pdf:text>-->
+        <pdf:line fromPoint = "30,152.2" toPoint = "180,152.2" lineWidth = "0.5"/>
+        <!--改为获取得到第一个问题-->
+        <pdf:paragraph rect = "{30,137},{150,20}" static = "NO" lineHeight = "8.2" indent = "10">{{ caseInquire.inquireNotequestionone }}</pdf:paragraph>
+        <!--<pdf:text point = "30,156.4">答：</pdf:text>-->
+        <pdf:paragraph rect = "{30,151.4},{150,20}" static = "NO" lineHeight = "8.2" indent = "10">{{ caseInquire.inquireNote1 }}</pdf:paragraph>
+        <pdf:line fromPoint = "37,160.4" toPoint = "180,160.4" lineWidth = "0.5"/>
+        <pdf:line fromPoint = "30,168.6" toPoint = "180,168.6" lineWidth = "0.5"/>
+        <pdf:text point = "30,172.8">问：什么原因导致事故的发生造成路产的损失？</pdf:text>
+        <pdf:line fromPoint = "37,176.8" toPoint = "180,176.8" lineWidth = "0.5"/>
+        <!--<pdf:text point = "30,181">答：</pdf:text>-->
+        <pdf:paragraph rect = "{30,176},{150,20}" static = "NO" lineHeight = "8.2" indent = "10">{{ caseInquire.inquireNote2 }}</pdf:paragraph>
+        <pdf:line fromPoint = "37,185" toPoint = "180,185" lineWidth = "0.5"/>
+        <pdf:line fromPoint = "30,193.2" toPoint = "180,193.2" lineWidth = "0.5"/>
+        <pdf:text point = "30,197.4">问：有没人员伤亡？</pdf:text>
+        <pdf:line fromPoint = "37,201.4" toPoint = "180,201.4" lineWidth = "0.5"/>
+        <!--<pdf:text point = "30,205.6">答：</pdf:text>-->
+        <pdf:paragraph rect = "{30,200.6},{150,10}" static = "NO" lineHeight = "8.2" indent = "10">{{ caseInquire.inquireNote3 }}</pdf:paragraph>
+        <pdf:line fromPoint = "37,209.6" toPoint = "180,209.6" lineWidth = "0.5"/>
+        <pdf:text point = "30,213.8">问：现根据《中华人民共和国公路法》第七条、《广东省公路条例》第十七条、《广东省高</pdf:text>
+        <pdf:line fromPoint = "37,217.8" toPoint = "180,217.8" lineWidth = "0.5"/>
+        <pdf:text point = "30,222">速公路管理条例》第二十五条的有关条款规定对你损坏路产的行为依法作出索赔，请问还有</pdf:text>
+        <pdf:line fromPoint = "30,226" toPoint = "180,226" lineWidth = "0.5"/>
+        <pdf:text point = "30,230.2">无其他补充？</pdf:text>
+        <pdf:line fromPoint = "30,234.2" toPoint = "180,234.2" lineWidth = "0.5"/>
+        <!--<pdf:text point = "30,238.4">答：</pdf:text>-->
+        <pdf:paragraph rect = "{30,233.4.4},{150,30}" static = "NO" lineHeight = "8.2" indent = "10">{{ caseInquire.inquireNote4 }}</pdf:paragraph>
+        <pdf:line fromPoint = "37,242.4" toPoint = "180,242.4" lineWidth = "0.5"/>
+        <pdf:line fromPoint = "30,250.6" toPoint = "180,250.6" lineWidth = "0.5"/>
+        <pdf:line fromPoint = "30,258.8" toPoint = "180,258.8" lineWidth = "0.5"/>
+        
+        
+        
+        
+        
+        <!--<pdf:line fromPoint="30,145" toPoint="180,145" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,155" toPoint="180,155" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,165" toPoint="180,165" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,175" toPoint="180,175" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,185" toPoint="180,185" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,195" toPoint="180,195" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,205" toPoint="180,205" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,215" toPoint="180,215" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,225" toPoint="180,225" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,235" toPoint="180,235" lineWidth="0.5"/>
+        <pdf:line fromPoint="30,245" toPoint="180,245" lineWidth="0.5"/>-->
+        
+        <pdf:text point="30,263">询问人签名：</pdf:text>
+        <pdf:line fromPoint="60,267" toPoint="100,267" lineWidth="0.5"/>
+        <pdf:text point="100,263" fontSize="14">、</pdf:text>
+        <pdf:line fromPoint="103,267" toPoint="143,267" lineWidth="0.5"/>
+        <pdf:text point="143,263" fontSize="14">、</pdf:text>
+        <pdf:line fromPoint="145,267" toPoint="180,267" lineWidth="0.5"/>
+        <pdf:text point="30,271.2">被询问人签名及时间：</pdf:text>
+        <pdf:line fromPoint="70,275.5" toPoint="180,275.5" lineWidth="0.5"/>
+        
+        <!--
+		<pdf:table rect="{18.5,46},{172,220}" borderWidth="1.0" lineWidth="0.5" padding="1">
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:1.5,6">时间：</pdf:text>
+                    <pdf:text point="mid-left:18,6" static="NO">{{ caseInquire.date }}</pdf:text>
+					<pdf:text point="mid-left:72,6">地点：</pdf:text>
+                    <pdf:text point="mid-left:90,6" static="NO">{{ caseInquire.place }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:1.5,6">询问人：</pdf:text>
+                    <pdf:text point="mid-left:24,6" static="NO">{{ caseInquire.inquirerName }}</pdf:text>
+					<pdf:text point="mid-left:72,6">记录人：</pdf:text>
+                    <pdf:text point="mid-left:90,6" static="NO">{{ caseInquire.recorderName }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:1.5,6">被询问人：</pdf:text>
+                    <pdf:text point="mid-left:24,6" static="NO">{{ caseInquire.answererName }}</pdf:text>
+					<pdf:text point="mid-left:45,6">性别：</pdf:text>
+                    <pdf:text point="mid-left:57,6" static="NO">{{ caseInquire.answererSex }}</pdf:text>
+					<pdf:text point="mid-left:65,6">年龄：</pdf:text>
+                    <pdf:text point="mid-left:76,6" static="NO">{{ caseInquire.answererAge }}</pdf:text>
+					<pdf:text point="mid-left:84,6">与案件关系：</pdf:text>
+                    <pdf:text point="mid-left:114,6" static="NO">{{ caseInquire.answererRelation }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:1.5,6">工作单位和职务：</pdf:text>
+                    <pdf:text point="mid-left:37,6" maxWidth="60" static="NO">{{ caseInquire.answererOrgDuty }}</pdf:text>
+					<pdf:text point="mid-left:97,6">电话：</pdf:text>
+                    <pdf:text point="mid-left:110,6" static="NO">{{ caseInquire.answererPhoneNum }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:1.5,6">地址：</pdf:text>
+                    <pdf:text point="mid-left:13,6" maxWidth="80" static="NO">{{ caseInquire.answererAddress }}</pdf:text>
+					<pdf:text point="mid-left:97,6">邮编：</pdf:text>
+                    <pdf:text point="mid-left:110,6" static="NO">{{ caseInquire.answererPostalCode }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			
+			<pdf:tr height="10"><pdf:td width="172">
+                <pdf:paragraph rect="{8,-0.5},{160,120}" lineHeight="9.5" static="NO">
+                    {{ caseInquire.inquireNote }}
+                </pdf:paragraph>
+            </pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10">
+				
+			</pdf:tr>
+            <pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10"><pdf:td width="172">{{! 空白行 }}</pdf:td></pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172" textAlignment="left">被询问人签名并按印：</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:1.5,6">询问人签字：</pdf:text>
+					<pdf:text point="mid-left:67,6">证件号码：</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:1.5,6">被询问人签字：</pdf:text>
+					<pdf:text point="mid-left:67,6">证件号码：</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="10">
+				<pdf:td width="172">
+					<pdf:text point="mid-left:127,6">共</pdf:text>
+					<pdf:text point="mid-left:134,6" static="NO">{{ page.pageCount  }}</pdf:text>
+					<pdf:text point="mid-left:142,6">页第</pdf:text>
+					<pdf:text point="mid-left:153,6" static="NO">{{ page.pageNum  }}</pdf:text>
+					<pdf:text point="mid-left:160,6">页</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+		</pdf:table>
+		<pdf:text point="22,268">（本页填写不下的内容，可另附纸）</pdf:text>-->
+	</pdf:content>
+</pdf:template>

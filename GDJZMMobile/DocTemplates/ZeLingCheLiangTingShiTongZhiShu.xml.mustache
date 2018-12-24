@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 责令车辆停驶通知书 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="13" />
+	<pdf:content>
+        <pdf:text point="66,29" fontName="SimHei" fontSize="21.5">责令车辆停驶通知书</pdf:text>
+        <pdf:line fromPoint="25.5,46" toPoint="175,46" lineWidth="0.5" />
+        <pdf:line fromPoint="25.5,46" toPoint="25.5,117" lineWidth="0.5" />
+        <pdf:text point="29,58.8">暂</pdf:text>
+        <pdf:text point="29,67">扣</pdf:text>
+        <pdf:text point="29,75">车</pdf:text>
+        <pdf:text point="29,83">船</pdf:text>
+        <pdf:text point="29,92">情</pdf:text>
+        <pdf:text point="29,100">况</pdf:text>
+        <!--    暂扣车船情况      右线    -->
+        <pdf:line fromPoint="37.5,46" toPoint="37.5,117" lineWidth="0.5" />
+        <pdf:text point="43,51">号牌号码</pdf:text>
+        <pdf:text point="70,51" maxWidth="" static="NO">{{ carNumber }}</pdf:text>
+        <pdf:text point="106,51">厂牌型号</pdf:text>
+        <pdf:text point="132,51" maxWidth="" static="NO">{{ fNo }}</pdf:text>
+        <pdf:text point="106,91">驾驶证号</pdf:text>
+        <pdf:text point="130,91" maxWidth="46" static="NO">{{ cardNo }}</pdf:text>
+        <pdf:text point="104,102">与车辆所有</pdf:text>
+        <pdf:text point="108,110">人关系</pdf:text>
+        <pdf:text point="139,107" maxWidth="" static="NO">{{ relationShip }}</pdf:text>
+        <pdf:text point="41,67">车辆所有人</pdf:text>
+        <pdf:text point="47,75">情况</pdf:text>
+        <pdf:text point="41,96">车辆驾驶人</pdf:text>
+        <pdf:text point="47,104">情况</pdf:text>
+        <pdf:text point="71,64">公民</pdf:text>
+        <pdf:text point="71,78">单位</pdf:text>
+        <pdf:text point="71,90">姓名</pdf:text>
+        <pdf:text point="86,90" maxWidth="14" static="NO">{{ personName }}</pdf:text>
+        <pdf:text point="71,106">住址</pdf:text>
+        
+        <pdf:paragraph rect="{85,98},{14,20}" lineHeight="6" static="NO">{{ personAddress }}</pdf:paragraph>
+        
+        
+        
+        
+        <pdf:text point="88,65">姓名</pdf:text>
+
+        <pdf:text point="104,65" maxWidth="" static="NO">{{ carowner }}</pdf:text>
+        <pdf:text point="88,78">名称</pdf:text>
+        <pdf:text point="102,78" maxWidth = "25" static = "NO">{{ carOwnerOrgName }}</pdf:text>
+        <pdf:text point="134,65">住址</pdf:text>
+        <pdf:text point="150,65" maxWidth="25" static="NO">{{ carownerAddress }}</pdf:text>
+        <pdf:text point="134,79">地址</pdf:text>
+        <pdf:text point="150,79" maxWidth = "25" static = "NO">{{ carOwnerOrgAddress }}</pdf:text>
+        <!--   号牌号码、车辆所有人情况 右线     -->
+        <pdf:line fromPoint="65,46" toPoint="65,117" lineWidth="0.5" />
+        <!--   姓名、名称 右线     -->
+        <pdf:line fromPoint="100,46" toPoint="100,117" lineWidth="0.5" />
+        <!--   、驾驶证号、与车辆所有人关系 右线     -->
+        <pdf:line fromPoint="128.5,46" toPoint="128.5,117" lineWidth="0.5" />
+        <!--   厂牌型号、号牌号码      下线    -->
+        <pdf:line fromPoint="37.2,60" toPoint="175,60" lineWidth="0.5" />
+        <!--   车辆所有人情况。 单位 名称 地址      下线    -->
+        <pdf:line fromPoint="37.2,87" toPoint="175,87" lineWidth="0.5" />
+        <!--   公民、姓名、住址     下线    -->
+        <pdf:line fromPoint="65,73" toPoint="175,73" lineWidth="0.5" />
+        <!--   姓名、驾驶证号      下线    -->
+        <pdf:line fromPoint="65,98" toPoint="175,98" lineWidth="0.5" />
+        <!--   表格    下线    -->
+        <pdf:line fromPoint="25.5,117" toPoint="175,117" lineWidth="0.5" />
+        <!--   表格    右线    -->
+        <pdf:line fromPoint="175,46" toPoint="175,117" lineWidth="0.5" />
+        <!--   公民  单位  姓名   住址   右线    -->
+        <pdf:line fromPoint="84.5,60" toPoint="84.5,117" lineWidth="0.5" />
+         <!--   住址、地址   右线    -->
+        <pdf:line fromPoint="148.5,60" toPoint="148.5,87" lineWidth="0.5" />
+        <!--   责令停驶时间   -->
+        <pdf:text point="27,127.5">责令停驶时间:</pdf:text>
+        <pdf:text point="59,127" static="NO">{{ stopTime.year }}</pdf:text>
+        <pdf:line fromPoint="57,131.5" toPoint="69,131.5" lineWidth="0.5" />
+        <pdf:text point="70,127.5">年</pdf:text>
+        <pdf:text point="75,127" static="NO">{{ stopTime.month }}</pdf:text>
+        <pdf:line fromPoint="73,131.5" toPoint="82,131.5" lineWidth="0.5" />
+        <pdf:text point="82,127.5">月</pdf:text>
+        <pdf:text point="88,127" static="NO">{{ stopTime.day }}</pdf:text>
+        <pdf:line fromPoint="86,131.5" toPoint="95,131.5" lineWidth="0.5" />
+        <pdf:text point="95,127.5">日</pdf:text>
+        <pdf:text point="101,127" static="NO">{{ stopTime.hour }}</pdf:text>
+        <pdf:line fromPoint="99,131.5" toPoint="107,131.5" lineWidth="0.5" />
+        <pdf:text point="107,127.5">时</pdf:text>
+        <pdf:text point="114,127" static="NO">{{ stopTime.minute }}</pdf:text>
+        <pdf:line fromPoint="111,131.5" toPoint="120,131.5" lineWidth="0.5" />
+        <pdf:text point="120,127.5">分</pdf:text>
+        <pdf:text point="27,136">地点:</pdf:text>
+        <pdf:line fromPoint="40,140.2" toPoint="105,140.2" lineWidth="0.5" />
+        <pdf:text point="41,135" maxWidth="65" static="NO">{{ placePrefix }}</pdf:text>
+
+        <pdf:text point="36,144.5">经调查，</pdf:text>
+        <pdf:text point="51.5,144.5">车辆号码号牌为</pdf:text>
+        <pdf:text point="85,144" maxWidth="15" static="NO">{{ carNumber }}</pdf:text>
+        <pdf:line fromPoint="82,148.5" toPoint="102,148.5" lineWidth="0.5" />
+        <pdf:text point="102,144.5">的车辆在</pdf:text>
+        <pdf:text point="120,144" maxWidth="19" static="NO">{{ placePrefix }}</pdf:text>
+        <pdf:line fromPoint="120,148.5" toPoint="138,148.5" lineWidth="0.5" />
+        <pdf:text point="138,144.5">公路</pdf:text>
+        <pdf:text point="147,143.7" maxWidth="15" static="NO">{{ stationStart }}</pdf:text>
+        <pdf:line fromPoint="147,148.2" toPoint="161,148.2" lineWidth="0.5" />
+        <pdf:text point="161,145">处，</pdf:text>
+        <pdf:text point="170,145">对</pdf:text>
+        <pdf:text point="27,152.9">公路造成较大损害。</pdf:text>
+        <pdf:text point="65,152.9">依据</pdf:text>
+        <pdf:text point="75.5,152.9">《中华人民共和国公路法》</pdf:text>
+        <pdf:text point="129,152.9">第八十五条第二款的规定，</pdf:text>
+        <pdf:text point="27,161">责令停止行驶，</pdf:text>
+        <pdf:text point="56,161">停放于</pdf:text>
+        <pdf:text point="71,160.2" maxWidth="43" static="NO">{{ parkingAddress }}</pdf:text>
+        <pdf:line fromPoint="69,165" toPoint="102,165" lineWidth="0.5" />
+        <pdf:text point="102,161">，</pdf:text>
+        <pdf:text point="105,161">请于</pdf:text>
+        <pdf:text point="119,160" static = "NO">{{ periodLimit }}</pdf:text>
+        <pdf:line fromPoint="113.5,165" toPoint="128.5,165" lineWidth="0.5" />
+        <pdf:text point="129,161">日内到</pdf:text>
+        <pdf:paragraph rect="{143,158},{18,12}" fontSize = "8" lineHeight="2" static="NO">{{ department }}</pdf:paragraph>
+        <pdf:line fromPoint="143,164.5" toPoint="160,164.5" lineWidth="0.5" />
+        <pdf:text point="160,161">接收处</pdf:text>
+        <pdf:text point="27,169">理。</pdf:text>
+        <!--  接收处理机关地址、联系电话、车辆所有人或其代理人签名及时间、车辆驾驶人签名及时间   -->
+        <pdf:text point="27,177">接收处理机关地址：</pdf:text>
+        <pdf:text point="67,176.5" maxWidth="70" static="NO">{{ enforceAddress }}</pdf:text>
+        <pdf:line fromPoint="65,181" toPoint="139,181" lineWidth="0.5" />
+        <pdf:text point="27,185">联系电话：</pdf:text>
+        <pdf:text point="51,185" maxWidth="43" static="NO">{{ telephone }}</pdf:text>
+        <pdf:line fromPoint="47,190" toPoint="97,190" lineWidth="0.5" />
+        <pdf:text point="27,193">车辆所有人或其代理人签名及时间：</pdf:text>
+
+        <pdf:line fromPoint="98,198" toPoint="126,198" lineWidth="0.5" />
+        <pdf:text point="27,201">车辆驾驶人签名及时间：</pdf:text>
+        <pdf:line fromPoint="75,206" toPoint="111,206" lineWidth="0.5" />
+        
+        <!--   执法人员及执法证号   -->
+        <pdf:text point="27,210">执法人员：</pdf:text>
+        <pdf:text point="51,210" maxWidth = "25" static = "NO">{{ enforcer.name1 }}</pdf:text>
+        <pdf:line fromPoint="48,215" toPoint="84,215" lineWidth="0.5" />
+        <pdf:text point="86,210">执法证号：</pdf:text>
+        <pdf:text point="111,210" maxWidth = "25" static = "NO">{{ enforcer.num1 }}</pdf:text>
+        <pdf:line fromPoint="107,215" toPoint="144,215" lineWidth="0.5" />
+        
+        <pdf:text point="51,218" maxWidth = "25" static = "NO">{{ enforcer.name2 }}</pdf:text>
+        <pdf:line fromPoint="48,223" toPoint="84,223" lineWidth="0.5" />
+        <pdf:text point="86,218">执法证号：</pdf:text>
+        <pdf:text point="111,218" maxWidth = "25" static = "NO">{{ enforcer.num2 }}</pdf:text>
+        <pdf:line fromPoint="107,223" toPoint="144,223" lineWidth="0.5" />
+        <pdf:text point="51,226" maxWidth = "25" static = "NO">{{ enforcer.name3 }}</pdf:text>
+        <pdf:line fromPoint="48,231" toPoint="84,231" lineWidth="0.5" />
+        <pdf:text point="86,226">执法证号：</pdf:text>
+        <pdf:text point="111,226" maxWidth = "25" static = "NO">{{ enforcer.num3 }}</pdf:text>
+        <pdf:line fromPoint="107,231" toPoint="144,231" lineWidth="0.5" />
+        <!--   交通管理部门(印章)   -->
+        <pdf:text point="120,243">交通管理部门（印章）</pdf:text>
+        <pdf:text point="120,251" static = "NO">{{ printTime.year }}</pdf:text>
+        <pdf:text point="130,251">年</pdf:text>
+        <pdf:text point="135,251" static = "NO">{{ printTime.month }}</pdf:text>
+        <pdf:text point="139,251">月</pdf:text>
+        <pdf:text point="143,251" static = "NO">{{ printTime.day }}</pdf:text>
+        <pdf:text point="147.5,251">日</pdf:text>
+        <pdf:text point="28,260">(本文书一式两份：一份存根，一份交被登记保存人或其代理人。)</pdf:text>
+	</pdf:content>
+</pdf:template>
