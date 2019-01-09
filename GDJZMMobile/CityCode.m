@@ -15,4 +15,7 @@
 @dynamic city_name;
 @dynamic province_id;
 
+
+
+
 @end

@@ -33,8 +33,6 @@
 {
     [self initServer];
     //新版本更新
-    [self hasUpdateVersion];
-    
     return YES;
 }
 
@@ -111,6 +109,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     UploadRecord *uploadCheck = [[UploadRecord alloc] init];
     [uploadCheck asyncDel];
+    [self hasUpdateVersion];
 }
 
 -(void)initServer{
@@ -180,8 +179,7 @@
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
-- (void)saveContext
-{
+- (void)saveContext{
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil)

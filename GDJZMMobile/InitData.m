@@ -17,9 +17,9 @@
 
 - (void)autoParserForDataModel:(NSString *)dataModelName andInXMLString:(NSString *)xmlString{
     [[AppDelegate App] clearEntityForName:dataModelName];
-    if ([dataModelName isEqualToString:@"Systype"]) {
-        NSLog(@"Synchronizing data model Systype");
-    }
+//    if ([dataModelName isEqualToString:@"Systype"]) {
+//        NSLog(@"Synchronizing data model Systype");
+//    }
     NSError *error;
     TBXML *tbxml=[TBXML newTBXMLWithXMLString:xmlString error:&error];
     if (!error) {
@@ -30,7 +30,6 @@
         TBXMLElement *r2 = [TBXML childElementNamed:@"DownloadDataSetResult" parentElement:r1];
         TBXMLElement *r3 = [TBXML childElementNamed:@"diffgr:diffgram" parentElement:r2];
         TBXMLElement *r4 = [TBXML childElementNamed:@"NewDataSet" parentElement:r3];
-        
         TBXMLElement *table=r4->firstChild;
         while (table) {
             @autoreleasepool {

@@ -21,6 +21,11 @@
 //时间选择器类型标识，为0时只选择日期，为1时可选择日期和具体时间
 @synthesize pickerType=_pickerType;
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.preferredContentSize = CGSizeMake(300.0, 220.0);
+}
+
 - (NSDateFormatter *)formatter{
     if (_formatter==nil) {
         _formatter=[[NSDateFormatter alloc] init];

@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NSString * city_name;
 @property (nonatomic, retain) NSString * province_id;
 
+
+
 @end

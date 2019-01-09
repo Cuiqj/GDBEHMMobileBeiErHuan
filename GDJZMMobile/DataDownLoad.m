@@ -9,8 +9,6 @@
 #import "DataDownLoad.h"
 #import "AGAlertViewWithProgressbar.h"
 
-
-
 @interface DataDownLoad()
 @property (nonatomic,retain) AGAlertViewWithProgressbar *progressView;
 @property (nonatomic,assign) NSInteger parserCount;
@@ -123,7 +121,6 @@
         if ([self.progressView isVisible]) {
             self.currentParserCount=self.currentParserCount-1;
             [self.progressView setProgress:(int)(((float)(-self.currentParserCount+self.parserCount)/(float)self.parserCount)*100.0)];
-            
             self.stillParsing = NO;
             if (self.currentParserCount==0) {
                 [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
