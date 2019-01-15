@@ -19,6 +19,13 @@ static NSString *PASSWORD=@"Xinlu:Admin";
     NSURLRequest *request = [NSURLRequest requestWithURL:url1 cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:5];
     NSHTTPURLResponse *response;
     [NSURLConnection sendSynchronousRequest:request returningResponse: &response error: nil];
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] <= 10.3) {
+//        NSURLSession * session = [NSURLSession sharedSession];
+//       NSURLSessionDataTask * task = [session dataTaskWithRequest:url1 completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+//
+//        }];
+//        [task resume];
+//    }
     if (response == nil) {
         void(^ShowAlert)(void)=^(void){
             UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"连接错误" message:@"无法连接到服务器，请检查网络连接。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

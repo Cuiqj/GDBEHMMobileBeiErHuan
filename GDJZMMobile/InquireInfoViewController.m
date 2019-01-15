@@ -432,12 +432,12 @@
         NSString *stationStartMString=[numFormatter stringFromNumber:[NSNumber numberWithInteger:stationStartM]];
         NSString *stationString;
         if (caseInfo.station_end.integerValue == 0 || caseInfo.station_end.integerValue == caseInfo.station_start.integerValue  ) {
-            stationString=[NSString stringWithFormat:@"K%@+%@处",stationStartKMString,stationStartMString];
+            stationString=[NSString stringWithFormat:@"K%@+%@m处",stationStartKMString,stationStartMString];
         } else {            
             NSInteger stationEndM=caseInfo.station_end.integerValue%1000;
             NSString *stationEndKMString=[NSString stringWithFormat:@"%d",caseInfo.station_end.integerValue/1000];
             NSString *stationEndMString=[numFormatter stringFromNumber:[NSNumber numberWithInteger:stationEndM]];
-            stationString=[NSString stringWithFormat:@"K%@+%@至K%@+%@处",stationStartKMString,stationStartMString,stationEndKMString,stationEndMString ];
+            stationString=[NSString stringWithFormat:@"K%@+%@至K%@+%@m处",stationStartKMString,stationStartMString,stationEndKMString,stationEndMString ];
         }
         NSString *roadName=[RoadSegment roadNameFromSegment:caseInfo.roadsegment_id];
 
@@ -505,7 +505,7 @@
     NSInteger stationStartM=caseInfo.station_start.integerValue%1000;
     NSString *stationStartKMString=[NSString stringWithFormat:@"%d", caseInfo.station_start.integerValue/1000];
     NSString *stationStartMString=[numFormatter stringFromNumber:[NSNumber numberWithInteger:stationStartM]];
-    NSString *stationString=[NSString stringWithFormat:@"K%@+%@处",stationStartKMString,stationStartMString];
+    NSString *stationString=[NSString stringWithFormat:@"K%@+%@m处",stationStartKMString,stationStartMString];
     NSArray *citizenArray=[Citizen allCitizenNameForCase:self.caseID];
     if (citizenArray.count>0) {
         if (citizenArray.count==1) {

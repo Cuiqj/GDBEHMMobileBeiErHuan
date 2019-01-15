@@ -1973,13 +1973,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/GDJZMMobile/GRMustache/lib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = GDBEHMMobile;
 				PROVISIONING_PROFILE = "01c35a78-7e8f-4531-b724-275da7dc4dbb";
 				"PROVISIONING_PROFILE[sdk=*]" = "ca8c0b1a-8ed1-4de6-a33f-2d3339d557e8";
 				PROVISIONING_PROFILE_SPECIFIER = AllProjectCanUsedevelopment;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2004,13 +2005,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/GDJZMMobile/GRMustache/lib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = GDBEHMMobile;
 				PROVISIONING_PROFILE = "01c35a78-7e8f-4531-b724-275da7dc4dbb";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ca8c0b1a-8ed1-4de6-a33f-2d3339d557e8";
 				PROVISIONING_PROFILE_SPECIFIER = AllProjectCanUsedevelopment;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

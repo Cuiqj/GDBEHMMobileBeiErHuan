@@ -257,7 +257,7 @@ typedef enum {
 //套打
 -(IBAction)btnPrintFormedPDF:(id)sender{
     
-//    [self.docPrinter toFullPDFWithPath:[self docPathFromFileName]];
+    
     [self.docPrinter toFormedPDFWithPath:[self docPathFromFileName]];
 
     NSLog(@"the URL of the PDF is ------%@",[self.docPrinter toFormedPDFWithPath:[self docPathFromFileName]]);
@@ -269,6 +269,7 @@ typedef enum {
 
 //普通表格全打印
 -(IBAction)btnPrintFullPDF:(id)sender{
+    [self.docPrinter toFullPDFWithPath:[self docPathFromFileName]];
     [self printPDF:PDFWithTable withSender:sender];
 }
 
@@ -279,7 +280,6 @@ typedef enum {
     if (fileType == PDFWithTable) {
         file = self.pdfFileURL;
     }else{
-
         file = self.pdfFormatFileURL;
     }
     if (file != nil) {

@@ -643,6 +643,7 @@ typedef enum _kTextFieldTag {
 
 
 - (void)setUser:(NSString *)name andUserID:(NSString *)userID{
+    NSString * str = self.textEnforcerName1.text;
     if (self.textFieldTag == 200) {
         self.textEnforcerName1.text = name;
         self.textEnforcerNumber1.text = [UserInfo exelawIDForUserName:name];
@@ -652,6 +653,10 @@ typedef enum _kTextFieldTag {
     }else if (self.textFieldTag == 202){
         self.textEnforcerName3.text = name;
         self.textEnforcerNumber3.text = [UserInfo exelawIDForUserName:name];
+    }
+    if (self.textFieldTag == 200 && [name isEqualToString:str]) {
+        self.textEnforcerName1.text = @"";
+        self.textEnforcerNumber1.text = @"";
     }
 }
 

@@ -50,7 +50,7 @@
     [super setCaseID:self.caseID];
     self.textAutomobileNumber.delegate = self;
     [self LoadPaperSettings:@"AtonementNoticeTable"];
-    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 650);
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 700);
     if (![self.caseID isEmpty]) {
          [self setAutoNumberText:nil];
      }
@@ -111,10 +111,11 @@
         CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
         UIGraphicsBeginPDFContextToFile(filePath, CGRectZero, nil);
         UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
-        [self drawStaticTable:@"AtonementNoticeTable"];
+
 //        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
         //add by lxm 2013.05.08
         self.labelCaseCode.text = [[NSString alloc] initWithFormat:@"(%@)年%@交赔字第0%@号",self.caseInfo.case_mark2, [[AppDelegate App].projectDictionary objectForKey:@"cityname"], self.caseInfo.full_case_mark3];
+        [self drawStaticTable:@"AtonementNoticeTable"];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
@@ -124,7 +125,7 @@
         return nil;
     }
 }
-//套打        
+//套打      确定套打位置
 - (NSURL *)toFormedPDFWithPath:(NSString *)filePath{
     [self savePageInfo];
     if (![filePath isEmpty]) {
@@ -152,29 +153,29 @@
 
 
 
-
--(NSURL *)toFullPDFWithTable:(NSString *)filePath{
-    [self savePageInfo];
-    if (![filePath isEmpty]) {
-        CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
-        UIGraphicsBeginPDFContextToFile(filePath, CGRectZero, nil);
-        UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
-        [self drawStaticTable:@"AtonementNoticeTable"];
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
-        
-        //add by lxm 2013.05.08
-        self.labelCaseCode.text = [[NSString alloc] initWithFormat:@"(%@)年%@交赔字第0%@号",self.caseInfo.case_mark2, [[AppDelegate App].projectDictionary objectForKey:@"cityname"], self.caseInfo.full_case_mark3];
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
-        
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
-        
-        
-        UIGraphicsEndPDFContext();
-        return [NSURL fileURLWithPath:filePath];
-    } else {
-        return nil;
-    }
-}
+//
+//-(NSURL *)toFullPDFWithTable:(NSString *)filePath{
+//    [self savePageInfo];
+//    if (![filePath isEmpty]) {
+//        CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
+//        UIGraphicsBeginPDFContextToFile(filePath, CGRectZero, nil);
+//        UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
+//        [self drawStaticTable:@"AtonementNoticeTable"];
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
+//
+//        //add by lxm 2013.05.08
+//        self.labelCaseCode.text = [[NSString alloc] initWithFormat:@"(%@)年%@交赔字第0%@号",self.caseInfo.case_mark2, [[AppDelegate App].projectDictionary objectForKey:@"cityname"], self.caseInfo.full_case_mark3];
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
+//
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
+//
+//
+//        UIGraphicsEndPDFContext();
+//        return [NSURL fileURLWithPath:filePath];
+//    } else {
+//        return nil;
+//    }
+//}
 
 -(NSURL *)toFullPDFWithPath_deprecated:(NSString *)filePath{
     [self savePageInfo];
