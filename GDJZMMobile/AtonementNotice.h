@@ -52,5 +52,7 @@
 -(NSString *)chinese_sum_y;
 -(NSString *)chinese_sum_j;
 -(NSString *)chinese_sum_f;
+    
+- (NSString *)lian;
 
 @end

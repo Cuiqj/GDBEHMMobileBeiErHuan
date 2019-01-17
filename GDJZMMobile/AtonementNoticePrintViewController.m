@@ -119,6 +119,7 @@
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
+        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
         UIGraphicsEndPDFContext();
         return [NSURL fileURLWithPath:filePath];
     } else {
@@ -139,6 +140,7 @@
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
+        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
         UIGraphicsEndPDFContext();
         return [NSURL fileURLWithPath:filePath];
     } else {
@@ -177,56 +179,56 @@
 //    }
 //}
 
--(NSURL *)toFullPDFWithPath_deprecated:(NSString *)filePath{
-    [self savePageInfo];
-    if (![filePath isEmpty]) {
-        CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
-        UIGraphicsBeginPDFContextToFile(filePath, CGRectZero, nil);
-        UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
-        //根据配置绘制固定的表格
-        //[self drawStaticTable1:@"AtonementNoticeTable"];
-        [self drawStaticTable:@"AtonementNoticeTable"];
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
-        
-        //add by lxm 2013.05.08
-
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
-        
-
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
-        
-
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
-        
-        UIGraphicsEndPDFContext();
-        return [NSURL fileURLWithPath:filePath];
-    } else {
-        return nil;
-    }
-}
-
--(NSURL *)toFormedPDFWithPath_deprecated:(NSString *)filePath{
-    [self savePageInfo];
-    if (![filePath isEmpty]) {
-        CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
-        NSString *formatFilePath = [NSString stringWithFormat:@"%@.format.pdf", filePath];
-        UIGraphicsBeginPDFContextToFile(formatFilePath, CGRectZero, nil);
-        UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
-        
-
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
-        
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
-
-        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
-        
-        UIGraphicsEndPDFContext();
-        return [NSURL fileURLWithPath:formatFilePath];
-    } else {
-        return nil;
-    }
-}
+//-(NSURL *)toFullPDFWithPath_deprecated:(NSString *)filePath{
+//    [self savePageInfo];
+//    if (![filePath isEmpty]) {
+//        CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
+//        UIGraphicsBeginPDFContextToFile(filePath, CGRectZero, nil);
+//        UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
+//        //根据配置绘制固定的表格
+//        //[self drawStaticTable1:@"AtonementNoticeTable"];
+//        [self drawStaticTable:@"AtonementNoticeTable"];
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
+//
+//        //add by lxm 2013.05.08
+//
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
+//
+//
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
+//
+//
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
+//
+//        UIGraphicsEndPDFContext();
+//        return [NSURL fileURLWithPath:filePath];
+//    } else {
+//        return nil;
+//    }
+//}
+//
+//-(NSURL *)toFormedPDFWithPath_deprecated:(NSString *)filePath{
+//    [self savePageInfo];
+//    if (![filePath isEmpty]) {
+//        CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
+//        NSString *formatFilePath = [NSString stringWithFormat:@"%@.format.pdf", filePath];
+//        UIGraphicsBeginPDFContextToFile(formatFilePath, CGRectZero, nil);
+//        UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
+//
+//
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
+//
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
+//
+//        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.proveInfo];
+//
+//        UIGraphicsEndPDFContext();
+//        return [NSURL fileURLWithPath:formatFilePath];
+//    } else {
+//        return nil;
+//    }
+//}
 
 #pragma CasePrintProtocol
 - (NSString *)templateNameKey

@@ -172,4 +172,8 @@
     return @"零";
 }
 
+    
+- (NSString *)lian{
+    return @"第一联：路政存";
+}
 @end

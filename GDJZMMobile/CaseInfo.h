@@ -65,4 +65,5 @@ typedef enum:NSUInteger {
 - (NSString *)fullCaseMarkAfterK:(BOOL)isAfterK;
 - (NSString *)full_happen_place;
 - (NSString *)full_station;
+
 @end

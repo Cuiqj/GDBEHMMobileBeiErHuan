@@ -270,7 +270,8 @@ static NSString * const xmlName = @"CaseCountTable";
                         @"tel":NSStringNilIsBad(citizen.tel_number),
                         };
     }
-    
+    NSString * lian = @"第一联：路政存";
+    BOOL * kongmoban;
     NSInteger emptyItemCnt = 16;
     id itemsData = [@[] mutableCopy];
     if (self.data != nil) {
@@ -291,6 +292,11 @@ static NSString * const xmlName = @"CaseCountTable";
             [itemsData addObject:singleItem];
             i++;
             emptyItemCnt--;
+        }
+        if(i==0){
+            kongmoban = YES;
+        }else{
+            kongmoban = NO;
         }
     }
     /* 若不足15个，用空数据补足 */
@@ -326,13 +332,25 @@ static NSString * const xmlName = @"CaseCountTable";
     if (![self.textRemark.text isEmpty]) {
         commentData = self.textRemark.text;
     }
+   
     id data = @{
                 @"citizen":citizenData,
                 @"case": caseData,
                 @"items":itemsData,
                 @"money":moneyData,
-                @"comment":commentData
+                @"comment":commentData,
+                @"lian":lian
                 };
+    if(kongmoban){
+        return @{
+                 @"citizen":@"",
+                 @"case": @"",
+                 @"items":itemsData,
+                 @"money":@"",
+                 @"comment":@"",
+                 @"lian":lian
+                 };
+    }
     return data;
 }
 

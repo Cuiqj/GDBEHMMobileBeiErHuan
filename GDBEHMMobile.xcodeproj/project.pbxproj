@@ -250,6 +250,8 @@
 		80D9592018086A11009D3937 /* ProveInfoTable.xml in Resources */ = {isa = PBXBuildFile; fileRef = 80D9590718086A11009D3937 /* ProveInfoTable.xml */; };
 		80D9592118086A11009D3937 /* ServiceReceiptTable.xml in Resources */ = {isa = PBXBuildFile; fileRef = 80D9590818086A11009D3937 /* ServiceReceiptTable.xml */; };
 		8416083021B0DB08005D689D /* LCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416082F21B0DB08005D689D /* LCNetworking.m */; };
+		8468C05E21EF2AE200E8E606 /* AtonementNoticeTable2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8468C05C21EF2AE200E8E606 /* AtonementNoticeTable2.xml */; };
+		8468C05F21EF2AE200E8E606 /* AtonementNoticeTable1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8468C05D21EF2AE200E8E606 /* AtonementNoticeTable1.xml */; };
 		BD1BD01018400E4100EFC172 /* GDXERHMMobile-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD1BD00F18400E4100EFC172 /* GDXERHMMobile-Info.plist */; };
 		C0923C481839BEE100D2795E /* TBXML+TBXML_TraverseAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C0923C461839BEE100D2795E /* TBXML+TBXML_TraverseAddition.m */; };
 		C092A6FF184C888000B748C4 /* RecordMadeOnScenePrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C092A6FE184C887F00B748C4 /* RecordMadeOnScenePrintViewController.m */; };
@@ -634,6 +636,8 @@
 		80D9592D18086B46009D3937 /* JZMMobile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JZMMobile-Info.plist"; sourceTree = "<group>"; };
 		8416082E21B0DB08005D689D /* LCNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNetworking.h; sourceTree = "<group>"; };
 		8416082F21B0DB08005D689D /* LCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNetworking.m; sourceTree = "<group>"; };
+		8468C05C21EF2AE200E8E606 /* AtonementNoticeTable2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AtonementNoticeTable2.xml; sourceTree = "<group>"; };
+		8468C05D21EF2AE200E8E606 /* AtonementNoticeTable1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AtonementNoticeTable1.xml; sourceTree = "<group>"; };
 		9B180DC517D6D0FC00A9A082 /* GRMustache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMustache.h; sourceTree = "<group>"; };
 		9B180DC617D6D0FC00A9A082 /* GRMustacheAvailabilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMustacheAvailabilityMacros.h; sourceTree = "<group>"; };
 		9B180DC717D6D0FC00A9A082 /* GRMustacheConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMustacheConfiguration.h; sourceTree = "<group>"; };
@@ -1486,6 +1490,8 @@
 			children = (
 				F765B4F1183E297400E49467 /* InquireTable2_new.xml */,
 				80D958FF18086A11009D3937 /* AtonementNoticeTable.xml */,
+				8468C05D21EF2AE200E8E606 /* AtonementNoticeTable1.xml */,
+				8468C05C21EF2AE200E8E606 /* AtonementNoticeTable2.xml */,
 				80D9590018086A11009D3937 /* books.xml */,
 				80D9590118086A11009D3937 /* CaseCountTable.xml */,
 				80D9590218086A11009D3937 /* CaseMapTable.xml */,
@@ -1644,6 +1650,7 @@
 				80D958C518086889009D3937 /* login-btn-信息.png in Resources */,
 				80D958C618086889009D3937 /* login-btn-许可.png in Resources */,
 				80D958C718086889009D3937 /* login-btn-巡查.png in Resources */,
+				8468C05E21EF2AE200E8E606 /* AtonementNoticeTable2.xml in Resources */,
 				80D958C818086889009D3937 /* 同步-bg.png in Resources */,
 				80D958C918086889009D3937 /* 法律-bg.png in Resources */,
 				80D958CA18086889009D3937 /* 许可-bg.png in Resources */,
@@ -1653,6 +1660,7 @@
 				80D958CE18086889009D3937 /* case-询问-bg.png in Resources */,
 				80D958CF18086889009D3937 /* login_index-bg.png in Resources */,
 				80D958D018086889009D3937 /* case-画图-bg.png in Resources */,
+				8468C05F21EF2AE200E8E606 /* AtonementNoticeTable1.xml in Resources */,
 				80D958D118086889009D3937 /* case-文书-bg.png in Resources */,
 				80D958D218086889009D3937 /* outer-icon.png in Resources */,
 				80D958D318086889009D3937 /* 广东省公路条例.pdf in Resources */,

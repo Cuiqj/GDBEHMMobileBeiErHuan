@@ -21,9 +21,9 @@
             </pdf:tr>
             <pdf:tr height="12">
             	<pdf:td width="16.5">案  发\n地  点</pdf:td>
-            	<pdf:td width="92.5" static="NO">{{ case.place }}</pdf:td>
+                <pdf:td width="92.5" static="NO">{{ case.place }}</pdf:td>
             	<pdf:td width="25">时 间</pdf:td>
-            	<pdf:td width="34.5" textAlignment="left" static="NO">{{ case.date }}</pdf:td>
+                <pdf:td width="34.5" textAlignment="left" static="NO">{{ case.date }}</pdf:td>
             </pdf:tr>
             <pdf:tr height="132">
                 <pdf:td width="16.5" textAlignment="center">损\n\n\n坏\n\n\n公\n\n\n路\n\n\n设\n\n\n施\n\n\n情\n\n\n况</pdf:td>
@@ -66,19 +66,19 @@
             	<pdf:td width="16.5" textAlignment="center">合计</pdf:td>
             	<pdf:td width="152" textAlignment="center">
             		<pdf:text point="mid-left:1,5.55">人民币（大写）：</pdf:text>
-            		<pdf:text point="mid-left:34,5.55" static="NO">{{ money.wan }} </pdf:text>
+                    <pdf:text point="mid-left:34,5.55" static="NO">{{ money.wan }} </pdf:text>
                     <pdf:text point="mid-left:46.5,5.55">万</pdf:text>
-            		<pdf:text point="mid-left:50,5.60" static="NO">{{ money.qian }} </pdf:text>
+                    <pdf:text point="mid-left:50,5.60" static="NO">{{ money.qian }} </pdf:text>
             		<pdf:text point="mid-left:55.5,5.6">仟</pdf:text>
-            		<pdf:text point="mid-left:60,5.65" static="NO">{{ money.bai }} </pdf:text>
+                    <pdf:text point="mid-left:60,5.65" static="NO">{{ money.bai }} </pdf:text>
             		<pdf:text point="mid-left:65,5.65">佰</pdf:text>
-            		<pdf:text point="mid-left:70,5.70" static="NO">{{ money.shi }} </pdf:text>
+                    <pdf:text point="mid-left:70,5.70" static="NO">{{ money.shi }} </pdf:text>
             		<pdf:text point="mid-left:75,5.7">拾</pdf:text>
-            		<pdf:text point="mid-left:80,5.75" static="NO">{{ money.yuan }} </pdf:text>
+                    <pdf:text point="mid-left:80,5.75" static="NO">{{ money.yuan }} </pdf:text>
             		<pdf:text point="mid-left:85,5.75">元</pdf:text>
-            		<pdf:text point="mid-left:90,5.80" static="NO">{{ money.jiao }} </pdf:text>
+                    <pdf:text point="mid-left:90,5.80" static="NO">{{ money.jiao }} </pdf:text>
             		<pdf:text point="mid-left:95.5,5.8">角</pdf:text>
-            		<pdf:text point="mid-left:101,5.85" static="NO">{{ money.fen }} </pdf:text>
+                    <pdf:text point="mid-left:101,5.85" static="NO">{{ money.fen }} </pdf:text>
             		<pdf:text point="mid-left:107,5.85">分</pdf:text>
                     <pdf:text point="mid-left:112,5.85">（￥</pdf:text>
                     <pdf:text point="mid-left:119.5,5.9" static="NO">{{ money.xiaoxie }}</pdf:text>
@@ -118,5 +118,12 @@
         <pdf:text point="top-left:18,266.8">当事人（签名）：</pdf:text>
         <pdf:text point="top-left:75,266.8">案件经办人（签名）：</pdf:text>
         <pdf:text point="top-left:150,266.8">执行单位（盖章）</pdf:text>
+        
+        
+<!--        <pdf:text point="mid-left:112,5.85">（￥</pdf:text>-->
+<!--        <pdf:text point="mid-left:119.5,5.9"-->
+        <pdf:text point="top-left:18,277" fontSize="10"  static="NO">{{ lian }}</pdf:text>
+        <!--     第一联：路政存       第二联：当事人存      -->
+
 	</pdf:content> 
 </pdf:template>

@@ -47,6 +47,8 @@ static NSString *lochus_code = @"";
         return @"";
     }
 }
+    
+
 
 //读取案号对应的案件信息记录
 +(CaseInfo *)caseInfoForID:(NSString *)caseID{
