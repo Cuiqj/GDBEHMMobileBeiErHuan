@@ -1908,11 +1908,16 @@ typedef enum {
     return nil;
 }
 
-
+//套打
 - (NSURL *)toFormedPDFWithPath:(NSString *)filePath{
     [self pageSaveInfo];
     if (![filePath isEmpty]) {
         NSString *formatFilePath = [NSString stringWithFormat:@"%@.format.pdf", filePath];
+        /*if ([formatFilePath containsString:@"赔（补）偿清单-0.pdf.format.pdf"]) {
+            if ([self.printController saveAsPDF:formatFilePath dataOnly:YES] == YES) {
+                return [NSURL fileURLWithPath:formatFilePath];
+            }
+        }else*/
         if ([self.printController saveAsPDF:formatFilePath dataOnly:YES] == YES) {
             return [NSURL fileURLWithPath:formatFilePath];
         }

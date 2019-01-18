@@ -14,11 +14,14 @@
 #import "NSNumber+NumberConvert.h"
 #import "CaseCount.h"
 
+#import "ListSelectViewController.h"
+
 static NSString * const xmlName = @"CaseCountTable";
 
 @interface CaseCountPrintViewController ()
 @property (nonatomic, retain) NSMutableArray *data;
 @property (nonatomic, retain) CaseCount *caseCount;
+@property (nonatomic,retain) UIPopoverController * pickerPopover;
 @end
 
 @implementation CaseCountPrintViewController
@@ -270,7 +273,6 @@ static NSString * const xmlName = @"CaseCountTable";
                         @"tel":NSStringNilIsBad(citizen.tel_number),
                         };
     }
-    NSString * lian = @"第一联：路政存";
     BOOL * kongmoban;
     NSInteger emptyItemCnt = 16;
     id itemsData = [@[] mutableCopy];
@@ -332,7 +334,7 @@ static NSString * const xmlName = @"CaseCountTable";
     if (![self.textRemark.text isEmpty]) {
         commentData = self.textRemark.text;
     }
-   
+    NSString * lian = self.textlian.text;
     id data = @{
                 @"citizen":citizenData,
                 @"case": caseData,
@@ -354,5 +356,19 @@ static NSString * const xmlName = @"CaseCountTable";
     return data;
 }
 
+
+- (IBAction)touchdownlian:(id)sender {
+    UITextField * field = (UITextField *)sender;
+    ListSelectViewController *listPicker=[self.storyboard instantiateViewControllerWithIdentifier:@"ListSelectPopover"];
+    listPicker.delegate=self;
+    listPicker.data = @[@"第一联：路政存",@"第二联：当事人存",@""];
+    self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:listPicker];
+    CGRect rect = field.frame;
+    [self.pickerPopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+    listPicker.pickerPopover=self.pickerPopover;
+}
+- (void)setSelectData:(NSString *)data{
+    self.textlian.text = data;
+}
 
 @end

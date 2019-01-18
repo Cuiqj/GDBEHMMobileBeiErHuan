@@ -12,7 +12,7 @@
 
 @interface RecordMadeOnScenePrintViewController : CasePrintViewController <UserPickerDelegate,AutoNumberPickerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *textLocation;
+@property (weak, nonatomic) IBOutlet UITextField *textLocation;          //执法地点
 @property (weak, nonatomic) IBOutlet UITextField *textEnforceYear;
 @property (weak, nonatomic) IBOutlet UITextField *textEnforceMonth;
 @property (weak, nonatomic) IBOutlet UITextField *textEnforceDay;

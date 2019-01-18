@@ -30,6 +30,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *textadress;
 @property (weak, nonatomic) IBOutlet UITextField *citizenparty;
 
+//第几联
+@property (weak, nonatomic) IBOutlet UITextField *textlian;
+
+- (IBAction)touchdownlian:(id)sender;
+//选择第几联
+- (void)setSelectData:(NSString *)data;
 //选择车辆
 - (IBAction)showAutoNumerPicker:(id)sender;
 @end

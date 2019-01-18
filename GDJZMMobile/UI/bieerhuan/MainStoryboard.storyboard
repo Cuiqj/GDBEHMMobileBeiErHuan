@@ -4823,35 +4823,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="当事人赔（补）偿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aMK-oZ-lkd">
-                                <rect key="frame" x="90" y="460" width="140" height="30"/>
+                                <rect key="frame" x="90" y="421" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="当事人必须在收到本通知书之日起15日内持本通知书到" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2fE-vc-LDa">
-                                <rect key="frame" x="60" y="505" width="420" height="30"/>
+                                <rect key="frame" x="60" y="466" width="420" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="缴纳路产赔补（偿）费。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="icv-Hs-ixp">
-                                <rect key="frame" x="60" y="550" width="200" height="30"/>
+                                <rect key="frame" x="60" y="511" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="ysq-fm-1af">
-                                <rect key="frame" x="490" y="505" width="300" height="30"/>
+                                <rect key="frame" x="490" y="466" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="6DI-5W-ouW">
-                                <rect key="frame" x="250" y="460" width="550" height="30"/>
+                                <rect key="frame" x="250" y="421" width="550" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -4878,6 +4878,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="第一联：路政存" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="9oW-iR-BOo">
+                                <rect key="frame" x="120" y="564" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="touchdownlian:" destination="q7F-ow-U7A" eventType="editingChanged" id="0xL-dT-Cgp"/>
+                                    <action selector="touchdownlian:" destination="q7F-ow-U7A" eventType="touchUpInside" id="C5f-Pj-0kU"/>
+                                    <action selector="touchdownlian:" destination="q7F-ow-U7A" eventType="touchDown" id="NMH-Hr-Kki"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="第几联" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1fb-jU-6UU">
+                                <rect key="frame" x="60" y="564" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -4900,11 +4919,12 @@
                         <outlet property="textYear" destination="G7Y-sL-AnG" id="5Ag-aj-yKx"/>
                         <outlet property="textadress" destination="VRs-xK-y7l" id="548-gM-ghi"/>
                         <outlet property="textcasereason" destination="SH1-bH-7LB" id="A5J-7b-gvq"/>
+                        <outlet property="textlian" destination="9oW-iR-BOo" id="EtG-nd-49P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VwR-4P-Npw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3658" y="1580"/>
+            <point key="canvasLocation" x="3658" y="1579.5"/>
         </scene>
         <!--勘验草图文字备注-->
         <scene sceneID="6mx-1y-y04">
@@ -8440,6 +8460,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="第几联" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KN5-nz-KrG">
+                                <rect key="frame" x="389" y="212" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="第一联：路政存" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="46a-gq-zbh">
+                                <rect key="frame" x="450" y="208" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="touchdownlian:" destination="aao-MQ-A23" eventType="touchDown" id="RLB-Vs-A2N"/>
+                                    <action selector="touchdownlian:" destination="aao-MQ-A23" eventType="touchUpInside" id="b7V-ph-cNY"/>
+                                    <action selector="touchdownlian:" destination="aao-MQ-A23" eventType="editingChanged" id="y2f-9v-zes"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -8457,12 +8496,13 @@
                         <outlet property="tableCaseCountDetail" destination="ppm-6J-YPt" id="QoG-Sr-9Gx"/>
                         <outlet property="textBigNumber" destination="5zU-XS-I3Y" id="imq-HD-leX"/>
                         <outlet property="textRemark" destination="2fS-8U-23o" id="Msm-hc-qAT"/>
+                        <outlet property="textlian" destination="46a-gq-zbh" id="ZS9-Ox-g8u"/>
                         <segue destination="ePa-es-zin" kind="modal" identifier="toCaseCountDetailEditor" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="ODr-E1-gNt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ih9-pr-OlB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5659" y="3104"/>
+            <point key="canvasLocation" x="5659" y="3103.5"/>
         </scene>
         <!--Case Count Detail Editor View Controller-->
         <scene sceneID="YZC-3T-aau">

@@ -46,7 +46,7 @@
 
 
 #define VERSION_NAME @"北二环"
-#define VERSION_TIME @"2019年01月08日"
+#define VERSION_TIME @"2019年01月18日"
 
 
 /*

@@ -184,7 +184,7 @@ static NSString *lochus_code = @"";
 - (NSString *)fullCaseMarkAfterK:(BOOL)isAfterK
 {
     if (isAfterK) {
-        return [NSString stringWithFormat:@"K%@+%@",self.station_start_km,self.station_start_m];
+        return [NSString stringWithFormat:@"K%@+%@M",self.station_start_km,self.station_start_m];
     } else {
         return [NSString stringWithFormat:@"%@+%@",self.station_start_km,self.station_start_m];
     }
@@ -193,10 +193,10 @@ static NSString *lochus_code = @"";
 
 - (NSString *)full_happen_place{
     NSString *roadName = [RoadSegment roadNameFromSegment:self.roadsegment_id];
-    return [NSString stringWithFormat:@"%@%@K%@+%@%@", roadName, self.side, [self station_start_km], [self station_start_m], self.place];
+    return [NSString stringWithFormat:@"%@%@K%@+%@M%@", roadName, self.side, [self station_start_km], [self station_start_m], self.place];
 }
 
 - (NSString *)full_station {
-    return [NSString stringWithFormat:@"K%@+%@", [self station_start_km], [self station_start_m]];
+    return [NSString stringWithFormat:@"K%@+%@M", [self station_start_km], [self station_start_m]];
 }
 @end

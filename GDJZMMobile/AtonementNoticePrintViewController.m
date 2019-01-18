@@ -23,7 +23,7 @@
 #import "LawbreakingAction.h"
 #import "Laws.h"
 
-
+#import "ListSelectViewController.h"
 
 @interface AtonementNoticePrintViewController ()
 @property (nonatomic,retain) UIPopoverController *autoNumberPicker;
@@ -32,6 +32,8 @@
 @property (nonatomic, retain) CaseInfo *caseInfo;
 @property (nonatomic, retain) Citizen *citizen;
 @property (nonatomic, retain) CaseProveInfo *proveInfo;
+
+@property (nonatomic,retain) UIPopoverController * pickerPopover;
 - (void)generateDefaultsForNotice:(AtonementNotice *)notice;
 @end
 
@@ -50,11 +52,13 @@
     [super setCaseID:self.caseID];
     self.textAutomobileNumber.delegate = self;
     [self LoadPaperSettings:@"AtonementNoticeTable"];
-    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 700);
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 690);
     if (![self.caseID isEmpty]) {
          [self setAutoNumberText:nil];
      }
     [super viewDidLoad];
+    
+    self.textlian.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -111,11 +115,20 @@
         CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
         UIGraphicsBeginPDFContextToFile(filePath, CGRectZero, nil);
         UIGraphicsBeginPDFPageWithInfo(pdfRect, nil);
-
+        NSString * empty_xml;
+        if([self.textlian.text isEqualToString:@"第一联：路政存"]){
+            empty_xml = @"AtonementNoticeTable";;
+        }
+        if([self.textlian.text isEqualToString:@"第二联：当事人存"]){
+            empty_xml = @"AtonementNoticeTable1";;
+        }
+        if([self.textlian.text isEqualToString:@"第三联：交给交警部门"]){
+            empty_xml = @"AtonementNoticeTable2";;
+        }
 //        [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
         //add by lxm 2013.05.08
         self.labelCaseCode.text = [[NSString alloc] initWithFormat:@"(%@)年%@交赔字第0%@号",self.caseInfo.case_mark2, [[AppDelegate App].projectDictionary objectForKey:@"cityname"], self.caseInfo.full_case_mark3];
-        [self drawStaticTable:@"AtonementNoticeTable"];
+        [self drawStaticTable:empty_xml];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.citizen];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.caseInfo];
         [self drawDateTable:@"AtonementNoticeTable" withDataModel:self.notice];
@@ -336,27 +349,13 @@
         payDeformations = [[payDeformations stringByAppendingString:deformation.roadasset_name] stringByAppendingFormat:@":%@%@\n",deformation.quantity,deformation.unit];
     }
     
-
-    
-    
-    
-    
-    
-    
-
     self.textAutomobileNumber.text = self.notice.citizen_name;
 
-    
-    
     
 }
 
 - (void)generateDefaultsForNotice:(AtonementNotice *)notice withAuotNumber:(NSString *)aAutoNumber{
-
-
     [self setCitizenAndProveInfo];
-    
-
     
     if ([self.proveInfo.event_desc isEmpty] || self.proveInfo.event_desc == nil) {
         self.proveInfo.event_desc = [CaseProveInfo generateEventDescForCase:self.caseID];
@@ -491,6 +490,10 @@
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (self.textlian == textField) {
+        [self touchdownlian:textField];
+        return NO;
+    }
     if (self.textAutomobileNumber == textField) {
         return NO;
     }
@@ -498,4 +501,18 @@
 }
 
 
+- (IBAction)touchdownlian:(id)sender {
+    UITextField * field = (UITextField *)sender;
+    ListSelectViewController *listPicker=[self.storyboard instantiateViewControllerWithIdentifier:@"ListSelectPopover"];
+    listPicker.delegate=self;
+    listPicker.data = @[@"第一联：路政存",@"第二联：当事人存",@"第三联：交给交警部门"];
+    self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:listPicker];
+    CGRect rect = field.frame;
+    [self.pickerPopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+    listPicker.pickerPopover=self.pickerPopover;
+}
+
+- (void)setSelectData:(NSString *)data{
+    self.textlian.text = data;
+}
 @end

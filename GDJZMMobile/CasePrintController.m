@@ -80,11 +80,7 @@ NSString * const DefaultTemplateDirectory = @"DocTemplates";
         if (err == nil && template != nil) {
             if ([self.delegate respondsToSelector:@selector(dataForPDFTemplate)]) {
                 id data = [self.delegate dataForPDFTemplate];
-                
-                
-                
                 if ([data objectForKey:@"caseInquire"]) {
-                    
                     NSMutableDictionary *dataDic = [[NSMutableDictionary dictionaryWithDictionary:data] mutableCopy];
                     NSMutableDictionary *caseInquire = [NSMutableDictionary dictionaryWithDictionary:[dataDic valueForKey:@"caseInquire"]];
                     NSArray * pagesArray = [caseInquire objectForKey:@"inquireNote"];
@@ -115,14 +111,14 @@ NSString * const DefaultTemplateDirectory = @"DocTemplates";
                             
                             [self.pdfRenderer renderFromXML:rendering XML2:renderingPage2 toPDF:path dataOnly:isDataOnly];
                             return YES;
-                            
-                        
                     }
-                    
-                    
-                } 
-                    NSString *rendering = [template renderObject:data error:&err];
-                    
+                }
+                NSString *rendering = [template renderObject:data error:&err];
+                if (isDataOnly && [data objectForKey:@"lian"]) {
+                    NSMutableDictionary *dataDic = [[NSMutableDictionary dictionaryWithDictionary:data] mutableCopy];
+                    [dataDic setObject:@"" forKey:@"lian"];
+                    rendering = [template renderObject:dataDic error:&err];
+                }
                     if (err == nil) {
                         self.pdfRenderer = [[XMLPDFRenderer alloc] init];
                         

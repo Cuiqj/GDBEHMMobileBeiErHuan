@@ -24,4 +24,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPayReal;
 @property (weak, nonatomic) IBOutlet UITextView *textRemark;
 
+//第几联
+@property (weak, nonatomic) IBOutlet UITextField *textlian;
+
+- (IBAction)touchdownlian:(id)sender;
+//选择第几联
+- (void)setSelectData:(NSString *)data;
+
+
+
 @end
