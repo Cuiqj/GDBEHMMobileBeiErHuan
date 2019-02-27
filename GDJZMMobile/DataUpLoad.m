@@ -34,8 +34,7 @@ static NSString *dataNameArray[UPLOADCOUNT]={@"Project",@"Task",@"AtonementNotic
 
 - (void)uploadData{
    
-        _uploadfailRecord = [[NSMutableArray alloc]initWithObjects:nil];
-    
+    _uploadfailRecord = [[NSMutableArray alloc]initWithObjects:nil];
     self.progressView=[[AGAlertViewWithProgressbar alloc] initWithTitle:@"上传业务数据" message:@"正在上传，请稍候……" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
     MAINDISPATCH(^(void){
         [self.progressView show];

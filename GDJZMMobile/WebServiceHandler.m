@@ -21,21 +21,24 @@ static NSString *PASSWORD=@"Xinlu:Admin";
     [NSURLConnection sendSynchronousRequest:request returningResponse: &response error: nil];
 //    if ([[[UIDevice currentDevice] systemVersion] floatValue] <= 10.3) {
 //        NSURLSession * session = [NSURLSession sharedSession];
-//       NSURLSessionDataTask * task = [session dataTaskWithRequest:url1 completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+//       NSURLSessionDataTask * task = [session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+//           NSLog(@"%@",response);
 //
-//        }];
+//       }];
 //        [task resume];
-//    }
-    if (response == nil) {
-        void(^ShowAlert)(void)=^(void){
-            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"连接错误" message:@"无法连接到服务器，请检查网络连接。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        };
-        MAINDISPATCH(ShowAlert);
-        return NO;
+//    }else{
+        if (response == nil) {
+            void(^ShowAlert)(void)=^(void){
+                UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"连接错误" message:@"无法连接到服务器，请检查网络连接。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alert show];
+            };
+            MAINDISPATCH(ShowAlert);
+            return NO;
+//        }
     }
     return YES;
 }
+
 
 -(void)getPermitData:(NSString *)permitNo 
                        startDate:(NSString *)startdate 
@@ -147,6 +150,23 @@ static NSString *PASSWORD=@"Xinlu:Admin";
     [theRequest setHTTPMethod:@"POST"];
     [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    //创建任务
+//    NSURLSessionDataTask *task = [session dataTaskWithRequest:theRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+//        if (data.length > 0 && error == nil) {
+//            NSString *theXML = [[NSString alloc] initWithBytes: [data bytes] length:[data length] encoding:NSUTF8StringEncoding];
+//            [self.delegate getWebServiceReturnString:theXML forWebService:serviceName];
+//        } else if (error != nil && error.code == NSURLErrorTimedOut) {
+//            [self.delegate requestTimeOut];
+//        } else if (error != nil) {
+//            [self.delegate requestUnkownError];
+//        }
+//    }];
+//    //开始任务
+//    [task resume];
+    
     [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         if (data.length > 0 && error == nil) {

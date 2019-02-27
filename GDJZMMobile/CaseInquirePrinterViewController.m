@@ -500,7 +500,6 @@ enum kPageInfo {
                 @"caseInquire": caseInquireData,
                 @"page":page
                 };
-    
     return data;
 }
 
