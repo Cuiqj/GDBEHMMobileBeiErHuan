@@ -282,7 +282,7 @@ enum kPageInfo {
 -(void)pageSaveInfo{
     Citizen *citizen = [Citizen citizenForCitizenName:self.caseInquire.answerer_name nexus:self.caseInquire.relation case:self.caseID];
     citizen.tel_number = NSStringNilIsBad(self.textphone.text);
-    citizen.age = [NSNumber numberWithInt: [self.textage.text integerValue]];
+//    citizen.age = [NSNumber numberWithInt: [self.textage.text integerValue]];
     citizen.address = NSStringNilIsBad(self.textaddress.text);
     citizen.card_no = NSStringNilIsBad(self.textsex.text);
     citizen.nexus = NSStringNilIsBad(self.textrelation.text);

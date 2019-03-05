@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDJZMMobile/CaseInquirePrinterViewController.m"
-            timestampString = "571976181.720878"
+            timestampString = "573036833.7992491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "333"
@@ -163,13 +163,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GDJZMMobile/CaseInquirePrinterViewController.m"
-            timestampString = "571976181.721272"
+            filePath = "GDJZMMobile/CaseProveInfoPrintViewController.m"
+            timestampString = "573033159.545857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
-            landmarkName = "-dataForPDFTemplate"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "-pageLoadInfo"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

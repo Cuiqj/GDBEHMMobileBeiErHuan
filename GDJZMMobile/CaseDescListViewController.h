@@ -15,7 +15,7 @@
 @interface CaseDescListViewController : UIViewController
 - (IBAction)btnCancel:(id)sender;
 - (IBAction)btnConfirm:(id)sender;
-@property (nonatomic,weak) UIPopoverController *popOver;
+@property (nonatomic,retain) UIPopoverController *popOver;
 @property (nonatomic,weak) id<CaseIDHandler> delegate;
 @property (nonatomic,copy) NSString *caseID;
 
