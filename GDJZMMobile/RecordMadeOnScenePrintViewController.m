@@ -53,6 +53,7 @@
         //CaseInquire和CaseProveInfo是生成默认的和加载现场笔录的时候都需要的对象
         self.caseInquire = [CaseInquire inquireForCase:self.caseID];
         self.proveInfo = [CaseProveInfo proveInfoForCase:self.caseID];
+        [self generateCaseSpotRecord];
         if (self.caseSpotRecord) {
             [self pageLoadInfo];
         }else{
@@ -82,28 +83,23 @@
         self.caseSpotRecord.caseinfo_id = self.caseID;
     }
 
-
-    
-
-
-
-    
-    
     NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
     NSString *currentUserName=[[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
-    NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
-    
-    
+    NSMutableArray * mutabarray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
+    NSMutableArray * inspectorArray = [NSMutableArray array];
+    for (int i = 0 ;i < [mutabarray count];i++) {
+        if ([mutabarray[i] isEqualToString:currentUserName]) {
+            
+        }else{
+            [inspectorArray addObject:mutabarray[i]];
+        }
+    }
     //执法人员1名字
     self.caseSpotRecord.man1 = currentUserName;
-    
-    
     //执法人员2名字
     if([inspectorArray count] > 0 && [inspectorArray objectAtIndex:0]) {
         self.caseSpotRecord.man2 = [inspectorArray objectAtIndex:0];
     }
-    
-    
     //执法人员3名字
     if([inspectorArray count] > 1 && [inspectorArray objectAtIndex:1]) {
         self.caseSpotRecord.man3 = [inspectorArray objectAtIndex:1];

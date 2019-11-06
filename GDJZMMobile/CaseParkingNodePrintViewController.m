@@ -4,7 +4,7 @@
 //
 //  Created by XU SHIWEN on 13-9-3.
 //
-//
+//责令车辆停驶通知书
 
 #import "CaseParkingNodePrintViewController.h"
 #import "CaseInfo.h"
@@ -163,7 +163,7 @@ typedef enum _kTextFieldTag {
             
             //驾驶人住址
             if (citizen.carowner_address) {
-                self.textCitizenAddress.text = citizen.carowner_address;
+                self.textCitizenAddress.text = citizen.address;
             }
             
             //与车辆所有人关系

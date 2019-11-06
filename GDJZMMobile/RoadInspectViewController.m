@@ -589,8 +589,16 @@ InspectionCheckState inspectionState;
                 remarkString=[NSString stringWithFormat:@"（%@）",remarkString];
             }
             NSString *quantity=[[NSString alloc] initWithFormat:@"%.2f",deform.quantity.floatValue];
-            NSCharacterSet *zeroSet=[NSCharacterSet characterSetWithCharactersInString:@".0"];
-            quantity=[quantity stringByTrimmingTrailingCharactersInSet:zeroSet];
+//            NSCharacterSet *zeroSet=[NSCharacterSet characterSetWithCharactersInString:@".0"];
+//            quantity=[quantity stringByTrimmingTrailingCharactersInSet:zeroSet];
+            for(int i =0;i<3;i++){
+                NSString * last = [quantity substringFromIndex:quantity.length-1];
+                if([last isEqualToString:@"0"] || [last isEqualToString:@"."]){
+                    quantity = [quantity substringToIndex:quantity.length-1];
+                }else{
+                    break;
+                }
+            }
             deformsString=[deformsString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
         }
         NSCharacterSet *charSet=[NSCharacterSet characterSetWithCharactersInString:@"、"];
