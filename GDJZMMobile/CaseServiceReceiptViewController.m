@@ -89,7 +89,9 @@ static NSString * const xmlName = @"ServiceReceiptTable";
     CaseInfo *caseInfo = [CaseInfo caseInfoForID:self.caseID];
     Citizen *citizen = [Citizen citizenForCitizenName:nil nexus:@"当事人" case:self.caseID];
     caseServiceReceipt.incepter_name=citizen.party;
+
     caseServiceReceipt.service_position = caseInfo.full_happen_place;
+    
     NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
     caseServiceReceipt.service_company = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
     //删掉已有送达文书
@@ -231,11 +233,11 @@ static NSString * const xmlName = @"ServiceReceiptTable";
     NSString *addressForService = NSStringNilIsBad(self.caseServiceReceipt.service_position);
     
     id itemsData = [NSMutableArray array];
-    int fileLimit = 3;
+    int fileLimit = 6;
     if (self.data) {
         int i = 0;
         for (CaseServiceFiles *file in self.data) {
-            if (i > 2) {
+            if (i > 5) {
                 break;
             }
             [itemsData addObject:@{@"docName" : file.service_file}];
@@ -245,7 +247,13 @@ static NSString * const xmlName = @"ServiceReceiptTable";
             [itemsData addObject:@{}];
         }
     }
+    
     NSString *comment = NSStringNilIsBad(self.caseServiceReceipt.remark);
+    NSString * casename = [NSString stringWithFormat:@"%@在%@发生交通事故%@",recipient,[addressForService stringByReplacingOccurrencesOfString:caseInfo.place withString:@""],caseSummary];
+//    id data1 = @{
+//                @"items": itemsData,
+//                };
+//    return data1;
     id data = @{
                 @"case": caseData,
                 @"recipient": recipient,
@@ -254,6 +262,7 @@ static NSString * const xmlName = @"ServiceReceiptTable";
                 @"addressForService": addressForService,
                 @"items": itemsData,
                 @"comment": comment,
+                @"casename": casename,
                 };
     
     return data;

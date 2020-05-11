@@ -27,6 +27,8 @@
 		<string>CaseCountTable</string>
 		<key>施工整改通知书</key>
 		<string>ConstructionTable</string>
+		<key>文书送达回证</key>
+		<string>ServiceReceiptTable</string>
 	</dict>
 	<key>Projectname</key>
 	<dict>

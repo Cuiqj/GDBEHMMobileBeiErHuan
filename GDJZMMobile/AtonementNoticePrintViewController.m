@@ -334,10 +334,6 @@
     self.textMonth.text = month;
     self.textDay.text = day;
     
-
-    
-    
-
     
     //损失的路产
     self.data = [[CaseDeformation deformationsForCase:self.caseID forCitizen:self.citizen.automobile_number] mutableCopy];

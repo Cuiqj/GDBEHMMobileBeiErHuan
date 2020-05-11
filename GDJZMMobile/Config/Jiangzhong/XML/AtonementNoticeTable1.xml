@@ -38,8 +38,8 @@
                         <line x1="169" y1="110" x2="189" y2="110"/>
                         <line x1="25" y1="120" x2="59" y2="120"/>
                         <!--当事人赔补偿         元-->
-                        <line x1="72" y1="178.3" x2="190" y2="178.3"/>
-                        <line x1="25" y1="188" x2="57" y2="188"/>
+                        <line x1="72" y1="178.3" x2="113" y2="178.3"/>
+<!--                        <line x1="25" y1="188" x2="57" y2="188"/>-->
                         <!--15日内持本通知书到-->
             <!--            <line x1="145" y1="190" x2="186" y2="190"/>-->
                         <!--         缴纳路产赔补偿费-->
@@ -207,139 +207,73 @@
                                 <origin x="32" y="184"/>
                                 <size width="130" height="6"/>
                             </Text>
-                        <Text>
+            <Text>
                                 <fontSize>14</fontSize>
-                                <text>亿</text>
-                                <origin x="76" y="184"/>
+                                <text>￥</text>
+                                <origin x="72.5" y="184"/>
                                 <size width="100" height="6"/>
                             </Text>
+            <Text>
+                            <fontSize>14</fontSize>
+                            <text>-</text>
+                            <origin x="73.65" y="184.9"/>
+                            <size width="100" height="6"/>
+                        </Text>
                         <Text>
                                 <fontSize>14</fontSize>
-                                <text>仟</text>
-                                <origin x="86" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>佰</text>
-                                <origin x="96" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>拾</text>
-                                <origin x="106.5" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>万</text>
-                                <origin x="116.5" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>仟</text>
-                                <origin x="126.5" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>佰</text>
-                                <origin x="137" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>拾</text>
-                                <origin x="147" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>元</text>
-                                <origin x="157" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>角</text>
-                                <origin x="170" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>分</text>
-                                <origin x="185" y="184"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>(￥</text>
-                                <origin x="23.5" y="193"/>
-                                <size width="100" height="6"/>
-                            </Text>
-                        <Text>
-                                <fontSize>14</fontSize>
-                                <text>元)。当事人必须在收到本通知书之日起15日内持本通知书到北二</text>
-                                <origin x="48.5" y="193"/>
+                                <text>。当事人必须在收到本通知书之日起</text>
+                                <origin x="113" y="184"/>
                                 <size width="400" height="6"/>
                             </Text>
                         <Text>
                                 <fontSize>14</fontSize>
-                                <text>环高速公路管理中心缴纳路产赔（补）偿费。</text>
-                                <origin x="25" y="204"/>
-                                <size width="300" height="6"/>
+                                <text>15日内持本通知书到北二环高速公路管理中心缴纳路产赔（补）偿费。</text>
+                                <origin x="25" y="194"/>
+                                <size width="600" height="6"/>
                             </Text>
                         <Text>
                                 <fontSize>14</fontSize>
                                 <text>当事人对本通知书认定的事实和赔（补）偿费数额有疑义的，可在收到</text>
-                                <origin x="32" y="214"/>
+                                <origin x="32" y="204"/>
                                 <size width="480" height="6"/>
                             </Text>
                         <Text>
                                 <fontSize>14</fontSize>
                                 <text>本通知书之日起60日内向广东省公路事务中心申请复核，或者依照《民事诉</text>
-                                <origin x="25" y="224"/>
+                                <origin x="25" y="214"/>
                                 <size width="560" height="6"/>
                             </Text>
                         <Text>
                                 <fontSize>14</fontSize>
                                 <text>讼法》的规定向人民法院提起民事诉讼。</text>
-                                <origin x="25" y="234"/>
+                                <origin x="25" y="224"/>
                                 <size width="300" height="6"/>
                             </Text>
                         <Text>
                                 <fontSize>14</fontSize>
                                 <text>广东省公路事务中心北二环高速公路路政大队</text>
-                                <origin x="90" y="251"/>
+                                <origin x="90" y="241"/>
                                 <size width="300" height="6"/>
                             </Text>
                         <Text>
                                 <text>年</text>
-                                <origin x="126" y="259.5"/>
+                                <origin x="126" y="249.5"/>
                                 <size width="100" height="6"/>
                             </Text>
                         <Text>
                                 <text>月</text>
-                                <origin x="141" y="259.5"/>
+                                <origin x="141" y="249.5"/>
                                 <size width="100" height="6"/>
                             </Text>
                         <Text>
                                 <text>日</text>
-                                <origin x="156" y="259.5"/>
+                                <origin x="156" y="249.5"/>
                                 <size width="100" height="6"/>
                             </Text>
-<!--                        <Text>-->
-<!--                                <text>第一联：路政存</text>-->
-<!--                                <fontSize>10</fontSize>-->
-<!--                                <origin x="29" y="276"/>-->
-<!--                                <size width="100" height="6"/>-->
-<!--                         </Text>-->
                         <Text>
                                 <text>第二联：当事人存</text>
                                 <fontSize>10</fontSize>
-                                <origin x="29" y="276"/>
+                                <origin x="29" y="272"/>
                                 <size width="100" height="6"/>
                          </Text>
 <!--                        <Text>-->
@@ -517,105 +451,105 @@
                             </content>
                     </UITextView>
                 <!--        赔补偿    元-->
-                <UITextField>
-                        <origin x="71.8" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_Ww</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="81.5" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_Qw</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="91.5" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_Bw</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="102" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_Sw</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="112" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_w</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="122.2" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_q</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="132" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_b</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="142.5" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_s</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="152.5" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_y</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="164" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_j</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
-                <UITextField>
-                        <origin x="179" y="182"/>
-                        <size width="300" height="6"/>
-                        <content>
-                                <data>
-                                        <attributeName>chinese_sum_f</attributeName>
-                                    </data>
-                            </content>
-                    </UITextField>
+<!--                <UITextField>-->
+<!--                        <origin x="71.8" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_Ww</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="81.5" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_Qw</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="91.5" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_Bw</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="102" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_Sw</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="112" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_w</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="122.2" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_q</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="132" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_b</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="142.5" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_s</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="152.5" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_y</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="164" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_j</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
+<!--                <UITextField>-->
+<!--                        <origin x="179" y="182"/>-->
+<!--                        <size width="300" height="6"/>-->
+<!--                        <content>-->
+<!--                                <data>-->
+<!--                                        <attributeName>chinese_sum_f</attributeName>-->
+<!--                                    </data>-->
+<!--                            </content>-->
+<!--                    </UITextField>-->
         <!--        <UITextField>-->
         <!--            <origin x="76" y="182"/>-->
         <!--            <size width="300" height="6"/>-->
@@ -627,8 +561,8 @@
         <!--        </UITextField>-->
                 <!--   数字   ¥    元 -->
                 <UITextField>
-                        <origin x="30.5" y="191"/>
-                        <size width="20" height="6"/>
+                        <origin x="77" y="182.3"/>
+                        <size width="37" height="6"/>
                         <content>
                                 <data>
                                         <attributeName>pay_mode_num</attributeName>
@@ -663,7 +597,7 @@
         <!--            </content>-->
         <!--        </UITextView>-->
                 <UITextField>
-                        <origin x="115" y="257.6"/>
+                        <origin x="115" y="247.6"/>
                         <size width="50" height="6"/>
                         <content>
                                 <data>
@@ -674,7 +608,7 @@
                     </UITextField>
                 <!--月-->
                 <UITextField>
-                        <origin x="134" y="257.6"/>
+                        <origin x="134" y="247.6"/>
                         <size width="20" height="6"/>
                         <content>
                                 <data>
@@ -685,7 +619,7 @@
                     </UITextField>
                 <!--日-->
                 <UITextField>
-                        <origin x="148" y="257.6"/>
+                        <origin x="148" y="247.6"/>
                         <size width="8" height="6"/>
                         <content>
                                 <data>
@@ -695,7 +629,6 @@
                             </content>
                     </UITextField>
             </DataTable>
-        
 </AtonementNoticeTable>
 
 

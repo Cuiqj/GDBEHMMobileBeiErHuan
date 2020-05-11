@@ -66,9 +66,9 @@
     if ([caseTypeID isEqualToString:CaseTypeIDDefault] ||
         [caseTypeID isEqualToString:CaseTypeIDPei]) {
 #ifdef DEBUG
-        return @[@"勘验检查笔录",@"询问笔录",@"现场笔录",@"赔（补）偿通知书",@"现场勘验图",@"赔（补）偿清单",@"责令车辆停驶通知书",@"施工整改通知书"];
+        return @[@"勘验检查笔录",@"询问笔录",@"现场笔录",@"赔（补）偿通知书",@"现场勘验图",@"赔（补）偿清单",@"责令车辆停驶通知书",@"文书送达回证",@"施工整改通知书"];
 #else
-        return @[@"勘验检查笔录",@"询问笔录",@"现场笔录",@"赔（补）偿通知书",@"现场勘验图",@"赔（补）偿清单",@"责令车辆停驶通知书"];
+        return @[@"勘验检查笔录",@"询问笔录",@"现场笔录",@"赔（补）偿通知书",@"现场勘验图",@"赔（补）偿清单",@"责令车辆停驶通知书",@"文书送达回证"];
 #endif
     }
     else if ([caseTypeID isEqualToString:CaseTypeIDFa]) {

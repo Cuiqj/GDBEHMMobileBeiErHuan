@@ -383,6 +383,12 @@ enum kPageInfo {
 {
     return DocNameKeyPei_AnJianXunWenBiLu;
 }
+- (NSString *)pinjieNSString:(NSString *)str{
+    if(str.length>0){
+        return [NSString stringWithFormat:@"答：%@",str];
+    }
+    return @"答：";
+}
 
 - (id)dataForPDFTemplate
 {
@@ -429,10 +435,10 @@ enum kPageInfo {
         answererName = NSStringNilIsBad(self.textanswerer_name.text);
         answererRelation = NSStringNilIsBad(self.caseInquire.relation);
         answererPhoneNum = NSStringNilIsBad(self.caseInquire.phone);
-        inquireNote1 = NSStringNilIsBad(self.textQuestion1.text);
-        inquireNote2 = NSStringNilIsBad(self.textQuestion2.text);
-        inquireNote3 = NSStringNilIsBad(self.textQuestion3.text);
-        inquireNote4 = NSStringNilIsBad(self.textQuestion4.text);
+        inquireNote1 = [self pinjieNSString:NSStringNilIsBad(self.textQuestion1.text)];
+        inquireNote2 = [self pinjieNSString:NSStringNilIsBad(self.textQuestion2.text)];
+        inquireNote3 = [self pinjieNSString:NSStringNilIsBad(self.textQuestion3.text)];
+        inquireNote4 = [self pinjieNSString:NSStringNilIsBad(self.textQuestion4.text)];
         answererOrgDuty = NSStringNilIsBad(self.caseInquire.company_duty);
         inquireNotequestionone = NSStringNilIsBad(self.inquireNotequestionone.text);
 
@@ -911,5 +917,13 @@ enum kPageInfo {
         _party = self.caseProveInfo.organizer;
     }
     return self.caseProveInfo;
+}
+-(void)deleteCurrentDoc{
+    NSManagedObjectContext * context = [[AppDelegate App] managedObjectContext];
+    if (self.caseInquire != nil && ![self.caseID isEmpty]) {
+        [context deleteObject:self.caseInquire];
+    }
+    [[AppDelegate App] saveContext];
+    self.caseInquire = nil;
 }
 @end
